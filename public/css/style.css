@@ -220,7 +220,7 @@ section.banner-w3ls .carousel-caption p.text-center {
 /*-- /banner section --*/
 /*-- second section --*/
 section.second-w3ls {
-    padding: 50px 0;
+    padding: 25px 0;
 }
 .container-fluid {
 	padding-left:0;
@@ -262,7 +262,7 @@ section.second-w3ls .tabs label {
 	height:55px;
 	position: relative;
 	display: block;
-	width:115px;
+	width:170px;
 	color: #fff;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -299,7 +299,7 @@ section.second-w3ls .tab-label-4 {
 section.second-w3ls .tabs input:checked + label {
     background:#2b2727;
 	z-index: 6;
-	width:120px;
+	width:170px;
 	 border-radius: 5px 0 0 5px;
 	-webkit-border-radius:5px 0 0 5px;
 	-moz-border-radius:5px 0 0 5px;
