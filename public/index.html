@@ -31,9 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="css/analog-clock.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- /css -->
-<!-- js -->
-<script type="text/javascript" src="js/modernizr.js"></script>
-<!-- /js -->
+
 <style>
        #map {
         height: 500px;
@@ -41,10 +39,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
        }
     </style>
 </head>
-<body onload="startTime()">
+<body>
 <section class="ui-w3ls">
 	<!-- Static navbar -->
     <nav class="navbar navbar-default">
+    
 		<div class="search-w3ls">
 			<form action="#" method="post">
 				<div class="input-group">
@@ -66,15 +65,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-pencil" id="btn-login" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/log.jpg" class="img-circle img-responsive" alt=""></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
-						<li><a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> My Media</a></li>
-						<li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Setting</a></li>
-						<li><a href="#"><i class="fa fa-power-off" aria-hidden="true"></i> Sign Out</a></li>
+				
 					</ul>
 				</li>
             </ul>
@@ -126,13 +119,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="content">
 						<div class="content-1">
 							<script type="text/javascript" id="WolframAlphaScript345792ebd31558c46c0175bc03972e12" src="//www.wolframalpha.com/widget/widget.jsp?id=345792ebd31558c46c0175bc03972e12&theme=black&output=iframeOpenExpand"></script>
+							<p>asdfasdfasdf</p>
 						</div>
 						<div class="content-2">
 							<h3>Services</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit nisl, ullamcorper eget elit vitae, vehicula consequat neque. Nunc sit amet orci at orci blandit dictum a sed diam. Curabitur ut pharetra sem. Aliquam erat volutpat. Cras scelerisque, nunc nec vulputate hendrerit, est neque pretium velit, at vulputate tortor neque ut ex. Vivamus sollicitudin eleifend urna, vitae hendrerit neque. Etiam egestas commodo dolor ut pulvinar.</p>
 						</div>
 						<div class="content-3">
-							<h3>Work</h3>
+							<h3>Workadfssdffsadfsdfds</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit nisl, ullamcorper eget elit vitae, vehicula consequat neque. Nunc sit amet orci at orci blandit dictum a sed diam. Curabitur ut pharetra sem. Aliquam erat volutpat. Cras scelerisque, nunc nec vulputate hendrerit, est neque pretium velit, at vulputate tortor neque ut ex. Vivamus sollicitudin eleifend urna, vitae hendrerit neque. Etiam egestas commodo dolor ut pulvinar.</p>
 						</div>
 						<div class="content-4">
@@ -144,5 +138,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>	
 		</div>
 	</section>
+
+
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Auth0 lock script -->
+<script src="https://cdn.auth0.com/js/lock/10.8/lock.min.js"></script>
+<!-- Setting the right viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- /js -->
+<script type="text/javascript" src="js/index.js"></script>
+
+<script type="text/javascript" src="js/modernizr.js"></script>
+
 </body>
 </html>
