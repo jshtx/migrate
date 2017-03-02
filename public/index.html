@@ -57,29 +57,7 @@
         </div><!--/.nav-collapse -->
     </nav>
 	<!-- /navigation -->
-	<!-- banner section -->	
-	<section class="banner-w3ls">
-		<div id="myCarousel">
-		    <div id="map"></div>
-		    <script>
-		      function initMap() {
-		        var usa = {lat: 37.0902, lng: -95.7129};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 4,
-		          center: usa
-		        });
-		        // var marker = new google.maps.Marker({
-		        //   position: usa,
-		        //   map: map
-		        // });
-		      }
-		    </script>
-		    <script async defer
-		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh-Wh3wjiHHjHMn7s7Z3uEbanawdTN7sU&callback=initMap">
-		    </script>
-		</div>
-	</section>
-	<!-- /banner section -->
+	
 	<!-- second section -->
 	<section class="second-w3ls">
 		<div class="container-fluid">
@@ -96,6 +74,12 @@
 			
 					<input id="tab-4" type="radio" name="radio-set" class="tab-selector-4" />
 					<label for="tab-4" class="tab-label-4">Preferences</label>
+
+					<input id="tab-5" type="radio" name="radio-set" class="tab-selector-5" />
+					<label for="tab-5" class="tab-label-5">Crime</label>
+
+					<input id="tab-6" type="radio" name="radio-set" class="tab-selector-6" />
+					<label for="tab-6" class="tab-label-4">Weather</label>
             
 					<div class="clear-shadow"></div>
 				
@@ -116,11 +100,43 @@
 							<h3>Contact</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit nisl, ullamcorper eget elit vitae, vehicula consequat neque. Nunc sit amet orci at orci blandit dictum a sed diam. Curabitur ut pharetra sem. Aliquam erat volutpat. Cras scelerisque, nunc nec vulputate hendrerit, est neque pretium velit, at vulputate tortor neque ut ex. Vivamus sollicitudin eleifend urna, vitae hendrerit neque. Etiam egestas commodo dolor ut pulvinar.</p>
 						</div>
+						<div class="content-5">
+							<h3>Contact</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit nisl, ullamcorper eget elit vitae, vehicula consequat neque. Nunc sit amet orci at orci blandit dictum a sed diam. Curabitur ut pharetra sem. Aliquam erat volutpat. Cras scelerisque, nunc nec vulputate hendrerit, est neque pretium velit, at vulputate tortor neque ut ex. Vivamus sollicitudin eleifend urna, vitae hendrerit neque. Etiam egestas commodo dolor ut pulvinar.</p>
+						</div>
+						<div class="content-6">
+							<h3>Contact</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit nisl, ullamcorper eget elit vitae, vehicula consequat neque. Nunc sit amet orci at orci blandit dictum a sed diam. Curabitur ut pharetra sem. Aliquam erat volutpat. Cras scelerisque, nunc nec vulputate hendrerit, est neque pretium velit, at vulputate tortor neque ut ex. Vivamus sollicitudin eleifend urna, vitae hendrerit neque. Etiam egestas commodo dolor ut pulvinar.</p>
+						</div>
 					</div>
 				</section>
 			</div>	
 		</div>
 	</section>
+
+	<!-- banner section -->	
+	<section class="first-w31s">
+		<div id="map">
+		    
+		    <script>
+		      function initMap() {
+		        var usa = {lat: 37.0902, lng: -95.7129};
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 4,
+		          center: usa
+		        });
+		        // var marker = new google.maps.Marker({
+		        //   position: usa,
+		        //   map: map
+		        // });
+		      }
+		    </script>
+		    <script async defer
+		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh-Wh3wjiHHjHMn7s7Z3uEbanawdTN7sU&callback=initMap">
+		    </script>
+		</div>
+	</section>
+	<!-- /banner section -->
 
 
 
