@@ -58,7 +58,7 @@ body ul {
 /*-- /reset code --*/
 body {
 	font-family: 'Titillium Web', sans-serif;
-	background:url(../images/blur.jpg) no-repeat;
+	background:url(../assets/img/blur.jpg) no-repeat;
 	background-position:center;
 	background-size:100% 100%;
 	-webkit-background-size:100% 100%;

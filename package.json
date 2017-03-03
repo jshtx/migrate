@@ -21,6 +21,8 @@
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
     "hellojs": "^1.14.0",
+    "indeed": "^1.1.0",
+    "indeed-api": "^1.0.0",
     "method-override": "^2.3.7",
     "mysql": "^2.13.0",
     "sequelize": "^3.30.2"
