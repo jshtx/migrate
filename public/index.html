@@ -57,6 +57,12 @@
         </div><!--/.nav-collapse -->
     </nav>
 	<!-- /navigation -->
+
+	<form>
+        <label>Enter City</label>
+        <input type="text" id="city-input">
+    </form>
+    <button id="submit" type="submit"> Submit </button>
 	
 	<!-- second section -->
 	<section class="second-w3ls">
@@ -84,7 +90,7 @@
 					<div class="clear-shadow"></div>
 				
 					<div class="content">
-						<div class="content-1">
+						<div class="content-1" id="city-div">
 							
 							<p>asdfasdfasdf</p>
 						</div>
@@ -117,23 +123,13 @@
 	<!-- banner section -->	
 	<section class="first-w31s">
 		<div id="map">
-		    
 		    <script>
-		      function initMap() {
-		        var usa = {lat: 37.0902, lng: -95.7129};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 4,
-		          center: usa
-		        });
-		        // var marker = new google.maps.Marker({
-		        //   position: usa,
-		        //   map: map
-		        // });
-		      }
+		      
 		    </script>
 		    <script async defer
 		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh-Wh3wjiHHjHMn7s7Z3uEbanawdTN7sU&callback=initMap">
-		    </script>
+		    </script> 
+		   
 		</div>
 	</section>
 	<!-- /banner section -->
