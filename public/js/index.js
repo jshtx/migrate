@@ -38,33 +38,55 @@ var userIp = [];
     userIp.push(data.ip);
   });
 
-// https://www.indeed.com/jobs?as_and=software+developer&as_phr=&as_any=&as_not=&as_ttl=&as_cmp=&jt=fulltime&st=&salary=50000&radius=25&l=Austin&fromage=any&limit=10&sort=&psf=advsrch
-
   $("#submit").on("click", function(event) {
 
-      // var location =;
-      // var radius =;
-      // var siteType =;
-      // var jobType =;
-      // var limit =;
-      // var country=;
-      // var salary=;
+      var jobTitle = $("#jobTitle").val().trim();
+      var jobTitle2 = $("#jobTitle2").val().trim();
+      var jobCity = $("#jobCity").val().trim();
+      var jobCity2 = $("#jobCity2").val().trim();
+      var jobState = $("#jobState").val().trim();
+      var jobState2 = $("#jobState2").val().trim();
+      var jobType = $("#jobType").val().trim();
+      var jobType2 = $("#jobType2").val().trim();
+      var jobSite = $("#jobSite").val().trim();
+      var jobSite2 = $("#jobSite2").val().trim();
+      var jobSalary = $("#jobSalary").val().trim();
+      var jobSalary2 = $("#jobSalary2").val().trim();
+      var jobDistance = $("#jobDistance").val().trim();
+      var jobDistance2 = $("#jobDistance2").val().trim();
 
-          event.preventDefault();
+      event.preventDefault();
 
-          var queryURL = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q=java&l=austin%2C+tx&sort=&radius=&st=&jt=&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
-      
-          $.ajax({
-                  url: queryURL,
-                  method: "GET"
-              })
-           
-              .done(function(response) {
-                  
-                  var results = JSON.stringify(response, null, 2);
-                  console.log(results);
-                  
-              });
+      var queryURL = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle+"&l="+jobCity+"%2C+"+jobState+"&sort=&radius="+jobDistance+"&st="+jobSite+"&jt="+jobType+"&salary="+jobSalary+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
+      var queryURL2 = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle2+"&l="+jobCity2+"%2C+"+jobState2+"&sort=&radius="+jobDistance2+"&st="+jobSite2+"&jt="+jobType2+"&salary="+jobSalary2+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
+  
+      $.ajax({
+              url: queryURL,
+              method: "GET"
+          })
+       
+          .done(function(response) {
+              
+              var results = JSON.stringify(response, null, 2);
+              console.log("FIRST AJAX CALL RESULTS - BEGINNING");
+              console.log(results);
+              console.log("FIRST AJAX CALL RESULTS - END");
+              
+          });
+
+      $.ajax({
+              url: queryURL2,
+              method: "GET"
+          })
+       
+          .done(function(response) {
+              
+              var results = JSON.stringify(response, null, 2);
+              console.log("SECOND AJAX CALL RESULTS - BEGINNING");
+              console.log(results);
+              console.log("SECOND AJAX CALL RESULTS - END");
+              
+          });
   });
 // END OF INDEED API AJAX CALL
 

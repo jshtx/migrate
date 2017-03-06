@@ -1,5 +1,11 @@
 
 /*-- reset code --*/
+
+footer {
+	color: white;
+	margin-left: 40%;
+}
+
 body{
 	padding:0;
 	margin:0;
@@ -184,6 +190,23 @@ section.second-w3ls .tabs {
     margin: 1px auto;
     width: 100%;
 }
+
+.queryInput {
+	color: white;
+    background-color: blue;
+    z-index: 1001;
+    opacity: 1;
+    position: relative;
+}
+
+.jobSearchFormTitles {
+	color: white;
+}
+
+#findJobs {
+	color: white;
+}
+
 section.second-w3ls .tabs input {
 	position: absolute;
 	z-index: 1000;
@@ -194,6 +217,7 @@ section.second-w3ls .tabs input {
     filter: alpha(opacity=0);
 	cursor: pointer;
 }
+
 section.second-w3ls .tabs input#tab-2{
 	top: 40px;
 }
@@ -324,6 +348,21 @@ section.second-w3ls .tabs input.tab-selector-6:checked ~ .content .content-6 {
     -ms-transition: all ease-out 0.4s 0.4s;
     transition: all ease-out 0.4s 0.4s;
 }
+
+.content-2 {
+	overflow: scroll;
+	overflow-x: hidden;
+    max-height: 100%;
+    width: 83.5%;
+}
+
+.content-4 {
+	overflow: scroll;
+	overflow-x:hidden;
+    max-height: 100%;
+    width: 83.5%;
+}
+
 section.second-w3ls .content div h3{
 	color: #fff;
 	font-size:25px;
