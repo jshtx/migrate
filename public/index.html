@@ -26,6 +26,8 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- /css -->
 
+
+
 <!-- /map css -->
 <style>
        #map {
@@ -36,7 +38,17 @@
 <!-- /map css -->
 
 <!-- link to index.js -->
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Auth0 lock script -->
+<script src="https://cdn.auth0.com/js/lock/10.8/lock.min.js"></script>
+<!-- Setting the right viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- /javascript -->
+
+<script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<!-- /javascript -->
 
 </head>
 <body>
@@ -65,6 +77,15 @@
         </div><!--/.nav-collapse -->
     </nav>
 	<!-- /navigation -->
+
+	<form>
+        						<label>Enter City 1</label>
+        						<input type="text" id="city-input">
+        						<label>Enter City 2</label>
+        						<input type="text" id="city-input2">
+    						</form>
+    
+    						<button id="compareCities" type="submit"> Submit </button>
 	
 	<!-- second section -->
 	<section class="second-w3ls">
@@ -93,9 +114,26 @@
 				
 					<div class="content" style = "overflow: auto">
 						<div class="content-1">
-							<h3>Compare Salaries</h3>
-							<p>asdfasdfasdf</p>
+
+						<!-- compare cities section -->
+							<h3>Compare Cities</h3>
+							
+    						
+    						<button id="general" type="submit"> Overall Ratings </button>
+    						<button id="rent" type="submit"> Average Prices </button>
+    						<button id="air" type="submit"> Pollution </button>
+    						<button id="crime" type="submit"> Crime </button>
+    						<button id="weather" type="submit"> Weather </button>
+    						<button id="traffic" type="submit"> Traffic </button>
+    						<br>
+    						<br>
+    						
+    						<div id="city-div"></div>
+    						<div id="city-div2"></div>
+						
+
 						</div>
+						<!-- compare cities section -->
 						<div class="content-2" style="position: absolute;">
 							<p>
 								<button type="submit" value="submit" id="submit">Submit</button>
@@ -531,16 +569,7 @@
 
 
 
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Auth0 lock script -->
-<script src="https://cdn.auth0.com/js/lock/10.8/lock.min.js"></script>
-<!-- Setting the right viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!-- /javascript -->
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/modernizr.js"></script>
-<!-- /javascript -->
+
 
 	<footer>
         <div class="container">
