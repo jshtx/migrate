@@ -2,8 +2,8 @@
 /*-- reset code --*/
 
 footer {
-	color: white;
-	margin-left: 40%;
+	color: #474545;
+	margin-left: 35%;
 }
 
 body{
@@ -167,7 +167,7 @@ ul.dropdown-menu li a:hover i.fa {
 /*-- /first section --*/
 
 section.first-w31s {
-	margin-bottom: 20px;
+	margin-bottom: 70px;
 }
 
 /*-- /first section --*/
