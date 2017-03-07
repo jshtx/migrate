@@ -67,9 +67,15 @@ var userIp = [];
        
           .done(function(response) {
               
-              var results = JSON.stringify(response, null, 2);
+              var res = JSON.stringify(response, null, 2);
               console.log("FIRST AJAX CALL RESULTS - BEGINNING");
-              console.log(results);
+              for (var i = 0; i < res.length; i++) {
+                console.log(response.results[i].jobtitle);
+                console.log(response.results[i].company);
+                console.log(response.results[i].formattedLocation);
+                console.log(response.results[i].snippet);
+                console.log(response.results[i].url);
+              };
               console.log("FIRST AJAX CALL RESULTS - END");
               
           });
@@ -81,11 +87,17 @@ var userIp = [];
        
           .done(function(response) {
               
-              var results = JSON.stringify(response, null, 2);
+              var res = JSON.stringify(response, null, 2);
               console.log("SECOND AJAX CALL RESULTS - BEGINNING");
-              console.log(results);
+              for (var i = 0; i < res.length; i++) {
+                console.log(response.results[i].jobtitle);
+                console.log(response.results[i].company);
+                console.log(response.results[i].formattedLocation);
+                console.log(response.results[i].snippet);
+                console.log(response.results[i].url);
+              };
               console.log("SECOND AJAX CALL RESULTS - END");
-              
+                      
           });
   });
 // END OF INDEED API AJAX CALL
