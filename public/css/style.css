@@ -184,13 +184,14 @@ label #city-input{
 }
 
 #city-div{
-	float:left;
+	position: relative;
+
 
 
 }
 
 #city-div2{
-	float:left;
+	position: relative;
 	
 
 	}
@@ -338,7 +339,7 @@ section.second-w3ls .clear-shadow {
 }
 section.second-w3ls .content {
     background:#312e2e;
-	/*--position: relative;--*/
+	position: relative;
     width: auto;
 
 	margin: -336px 0 0 120px;

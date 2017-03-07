@@ -84,6 +84,8 @@ var userIp = [];
 
     var city = $("#city-input").val().trim();
 
+    var cityResponse = [];
+    var cityResponse2 = [];
 
     $("#compareCities").on("click", function(event) {
 
@@ -104,9 +106,11 @@ var userIp = [];
 
         .done(function(response) {
 
+        	cityResponse = response;
+
             var results = response.prices[19].average_price;
 
-            results = (3.78541 * results).toFixed(2)
+            results = (3.78541 * results).toFixed(2);
 
 
 
@@ -131,6 +135,8 @@ var userIp = [];
 
         .done(function(response) {
 
+        	cityResponse2 = response;
+
             var results = response.prices[19].average_price;
 
             results = (3.78541 * results).toFixed(2)
@@ -154,26 +160,26 @@ var userIp = [];
 
 
 
-        var queryURL = "https://www.numbeo.com/api/city_prices?api_key=6b2rzozbl9v8lu&query=" + city;
+        // var queryURL = "https://www.numbeo.com/api/city_prices?api_key=6b2rzozbl9v8lu&query=" + city;
 
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
+        // $.ajax({
+        //     url: queryURL,
+        //     method: "GET"
+        // })
 
-        .done(function(response) {
+        // .done(function(response) {
 
-            var results1 = JSON.stringify(response.prices[21].average_price);
+            var results1 = JSON.stringify(cityResponse.prices[21].average_price);
 
-            var results2 = response.prices[19].average_price;
+            var results2 = cityResponse.prices[19].average_price;
 
             results2 = (3.78541 * results2).toFixed(2);
 
-            var results3 = response.prices[22].average_price;
+            var results3 = cityResponse.prices[22].average_price;
 
             results3 = (results3).toFixed(2);
 
-            var results4 = response.prices[7].average_price;
+            var results4 = cityResponse.prices[7].average_price;
 
             results4 = (3.78541 * results4).toFixed(2);
 
@@ -181,9 +187,8 @@ var userIp = [];
 
             $('#city-div').html('');
 
-            $('#city-div').prepend("Average Rent 1 Bedroom (Downtown) = $" + results1);
-            $('#city-div').prepend("<br>");
-            $('#city-div').prepend("Average Rent 1 Bedroom (Outside of Downtown) = $" + results3);
+-            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("<p>Average Rent 1 Bedroom (Outside of Downtown) = $" + results3 + "</p>");
 
             $('#city-div').prepend("<br>");
             $('#city-div').prepend("Average Gas Price per Gallon = $" + results2);
@@ -192,7 +197,7 @@ var userIp = [];
             $('#city-div').prepend("Average Milk Price per Gallon = $" + results4);
 
 
-        });
+//        });
 
         var city2 = $("#city-input2").val().trim();
 
@@ -207,19 +212,19 @@ var userIp = [];
 
         .done(function(response) {
 
-            var results1 = response.prices[21].average_price;
+            var results1 = cityResponse2.prices[21].average_price;
 
             results1 = (results1).toFixed(2);
 
-            var results2 = response.prices[19].average_price;
+            var results2 = cityResponse2.prices[19].average_price;
 
             results2 = (3.78541 * results2).toFixed(2);
 
-            var results3 = response.prices[22].average_price;
+            var results3 = cityResponse2.prices[22].average_price;
 
             results3 = (results3).toFixed(2);
 
-            var results4 = response.prices[7].average_price;
+            var results4 = cityResponse2.prices[7].average_price;
 
             results4 = (3.78541 * results4).toFixed(2);
 
