@@ -30,6 +30,13 @@ var userIp = [];
     userIp.push(data.ip);
   });
 
+$("#firstbutton").on("click", function(event) {
+   event.preventDefault();
+     $('#city-div').html('');
+            $('#city-div').append("Use the buttons above");
+
+});
+
   $("#submit").on("click", function(event) {
 
       var jobTitle = $("#jobTitle").val().trim();
