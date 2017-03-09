@@ -207,6 +207,14 @@ section.second-w3ls .tabs {
 	color: white;
 }
 
+#searchResultsList {
+	color: white;
+}
+
+#searchResultsList2 {
+	color: white;
+}
+
 section.second-w3ls .tabs input {
 	position: absolute;
 	z-index: 1000;
