@@ -42,13 +42,17 @@ label{
 }
 button{
 	width:150px;
-	margin: 5px 5px;
+	
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
+
+
+
 img {
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -205,6 +209,10 @@ label #city-input{
     display: none !important;
     
     
+}
+
+#myprogress{
+	background-color: red;
 }
 
 a:hover + .test {
@@ -373,7 +381,7 @@ section.second-w3ls .content {
 	margin: -372px 0 0 120px;
 	height: 336px;
 	z-index: 5;
-	overflow: scroll;
+	overflow-y: scroll;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     border-radius:0px;
 }
@@ -420,6 +428,9 @@ section.second-w3ls .tabs input.tab-selector-6:checked ~ .content .content-6 {
 
 .content-2 {
 	
+	position: absolute !important;
+	overflow-y: scroll;
+
 	
     max-height: 100%;
     width: 83.5%;
@@ -427,7 +438,8 @@ section.second-w3ls .tabs input.tab-selector-6:checked ~ .content .content-6 {
 
 
 .content-4 {
-	
+	    position: absolute !important;
+    overflow: scroll;
 	
     max-height: 100%;
     width: 83.5%;
@@ -446,8 +458,7 @@ section.second-w3ls .content div p {
 	text-align:justify;
 	margin: 0;
 	color: #fff;
-	padding-left: 15px;
-	border-left: 7px solid #8FFF8C;
+	
 	margin-bottom:30px;
 }
 /*-- /tabs section --*/
@@ -568,7 +579,7 @@ section.second-w3ls .content div p {
     line-height: 35px;
 }
 section.second-w3ls .content {
-	height: 384px;
+	height: 373px;
 }
 
 
