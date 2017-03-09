@@ -42,13 +42,17 @@ label{
 }
 button{
 	width:150px;
-	margin: 5px 5px;
+	
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
+
+
+
 img {
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -205,6 +209,10 @@ label #city-input{
     display: none !important;
     
     
+}
+
+#myprogress{
+	background-color: red;
 }
 
 a:hover + .test {
@@ -420,6 +428,9 @@ section.second-w3ls .tabs input.tab-selector-6:checked ~ .content .content-6 {
 
 .content-2 {
 	
+	position: absolute !important;
+	overflow-y: scroll;
+
 	
     max-height: 100%;
     width: 83.5%;
@@ -427,7 +438,8 @@ section.second-w3ls .tabs input.tab-selector-6:checked ~ .content .content-6 {
 
 
 .content-4 {
-	
+	    position: absolute !important;
+    overflow: scroll;
 	
     max-height: 100%;
     width: 83.5%;
@@ -446,8 +458,7 @@ section.second-w3ls .content div p {
 	text-align:justify;
 	margin: 0;
 	color: #fff;
-	padding-left: 15px;
-	border-left: 7px solid #8FFF8C;
+	
 	margin-bottom:30px;
 }
 /*-- /tabs section --*/
