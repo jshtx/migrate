@@ -33,8 +33,159 @@ var userIp = [];
 $("#firstbutton").on("click", function(event) {
    event.preventDefault();
      $('#city-div').html('');
-            $('#city-div').append("Use the buttons above");
+            //$('#city-div').append("Use the buttons above");
+            $('#city-div').append(function(event){
 
+                    var city = $("#city-input").val().trim();
+
+
+
+        var queryURL = "https://www.numbeo.com/api/indices?api_key=6b2rzozbl9v8lu&query=" + city;
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+
+        .done(function(response) {
+
+            var results1 = response.health_care_index;
+            var results1 = (results1).toFixed(0);
+
+            var results2 = response.crime_index;
+            var results2 = (results2).toFixed(0);
+
+            var results3 = response.traffic_time_index;
+            var results3 = (results3).toFixed(0);
+
+            var results4 = response.quality_of_life_index;
+            var results4 = (results4).toFixed(0);
+
+
+            var results5 = response.safety_index;
+            var results5 = (results5).toFixed(0);
+
+
+            var results6 = response.rent_index;
+            var results6 = (results6).toFixed(0);
+
+
+            var results7 = response.pollution_index;
+            var results7 = (results7).toFixed(0);
+
+            var results8 = response.groceries_index;
+            var results8 = (results8).toFixed(0);
+
+            $('#city-div').html('');
+
+            $('#city-div').prepend("Healthcare Index: " + results1);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Health Care Index is an estimation of the overall quality of the health care system, health care professionals, equipment, staff, doctors, cost, etc.</div>");
+            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("Crime Index: " + results2);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Crime Index is an estimation of overall level of crime in a given city or a country. We consider crime levels lower than 20 as very low, crime levels between 20 and 40 as being low, crime levels between 40 and 60 as being moderate, crime levels between 60 and 80 as being high and finally crime levels higher than 80 as being very high.</div>");
+            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("Traffic Index: " + results3);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Traffic Index is a composite index of time consumed in traffic due to job commute, estimation of time consumption dissatisfaction, CO2 consumption estimation in traffic and overall inefficiencies in the traffic system.</div>");
+            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("Quality of Life Index: " + results4);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Quality of Life Index (higher is better) is an estimation of overall quality of life by using empirical formula which takes into account purchasing power index (higher is better), pollution index (lower is better), house price to income ratio (lower is better), cost of living index (lower is better), safety index (higher is better), health care index (higher is better), traffic commute time index (lower is better) and climate index (higher is better).</div>");
+            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("Safety Index: " + results5);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Safety index is, on the other way, quite opposite of crime index. If the city has a high safety index, it is considered very safe.</div>");
+            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("Rent Index: " + results6);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Rent Index is estimation of prices of renting apartments in the city compared to New York City. If Rent index is 80, Numbeo estimates that price for renting in that city is 80% of price in New York.</div>");
+            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("Pollution Index: " + results7);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Pollution Index is an estimation of the overall pollution in the city. The biggest weight is given to air pollution, than to water pollution/accessibility, two main pollution factors. Small weight is given to other pollution types.</div>");
+            $('#city-div').prepend("<br>");
+            $('#city-div').prepend("Groceries Index: " + results8);
+            $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Groceries Index is an estimation of grocery prices in the city compared to New York City.</div>");
+        });
+
+        var city2 = $("#city-input2").val().trim();
+
+
+
+        var queryURL2 = "https://www.numbeo.com/api/indices?api_key=6b2rzozbl9v8lu&query=" + city2;
+
+        $.ajax({
+            url: queryURL2,
+            method: "GET"
+        })
+
+        .done(function(response) {
+
+            var results1 = response.health_care_index;
+            var results1 = (results1).toFixed(0);
+
+            var results2 = response.crime_index;
+            var results2 = (results2).toFixed(0);
+
+            var results3 = response.traffic_time_index;
+            var results3 = (results3).toFixed(0);
+
+            var results4 = response.quality_of_life_index;
+            var results4 = (results4).toFixed(0);
+
+
+            var results5 = response.safety_index;
+            var results5 = (results5).toFixed(0);
+
+
+            var results6 = response.rent_index;
+            var results6 = (results6).toFixed(0);
+
+
+            var results7 = response.pollution_index;
+            var results7 = (results7).toFixed(0);
+
+            var results8 = response.groceries_index;
+            var results8 = (results8).toFixed(0);
+
+            $('#city-div2').html('');
+
+            $('#city-div2').prepend("Healthcare Index: " + results1);
+            $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Health Care Index is an estimation of the overall quality of the health care system, health care professionals, equipment, staff, doctors, cost, etc.</div>");
+            $('#city-div2').prepend("<br>");
+            $('#city-div2').prepend("Crime Index: " + results2);
+            $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Crime Index is an estimation of overall level of crime in a given city or a country. We consider crime levels lower than 20 as very low, crime levels between 20 and 40 as being low, crime levels between 40 and 60 as being moderate, crime levels between 60 and 80 as being high and finally crime levels higher than 80 as being very high.</div>");
+            $('#city-div2').prepend("<br>");
+            $('#city-div2').prepend("Traffic Index: " + results3);
+            $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Traffic Index is a composite index of time consumed in traffic due to job commute, estimation of time consumption dissatisfaction, CO2 consumption estimation in traffic and overall inefficiencies in the traffic system.</div>");
+            $('#city-div2').prepend("<br>");
+            $('#city-div2').prepend("Quality of Life Index: " + results4);
+                      $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Quality of Life Index (higher is better) is an estimation of overall quality of life by using empirical formula which takes into account purchasing power index (higher is better), pollution index (lower is better), house price to income ratio (lower is better), cost of living index (lower is better), safety index (higher is better), health care index (higher is better), traffic commute time index (lower is better) and climate index (higher is better).</div>");
+            $('#city-div2').prepend("<br>");
+            $('#city-div2').prepend("Safety Index: " + results5);
+            $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Safety index is, on the other way, quite opposite of crime index. If the city has a high safety index, it is considered very safe.</div>");
+            $('#city-div2').prepend("<br>");
+            $('#city-div2').prepend("Rent Index: " + results6);
+                       $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Rent Index is estimation of prices of renting apartments in the city compared to New York City. If Rent index is 80, Numbeo estimates that price for renting in that city is 80% of price in New York.</div>");
+            $('#city-div2').prepend("<br>");
+            $('#city-div2').prepend("Pollution Index: " + results7);
+                        $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Pollution Index is an estimation of the overall pollution in the city. The biggest weight is given to air pollution, than to water pollution/accessibility, two main pollution factors. Small weight is given to other pollution types.</div>");
+            $('#city-div2').prepend("<br>");
+            $('#city-div2').prepend("Groceries Index: " + results8);
+                        $('#city-div2').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Groceries Index is an estimation of grocery prices in the city compared to New York City.</div>");
+        });
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+            
 });
 
   $("#submit").on("click", function(event) {
