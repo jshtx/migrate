@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
 
 // Sets up the Express App
 // =============================================================
@@ -21,14 +22,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// Static directory
-app.use(express.static("./public"));
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + "./public"));
+
+// Override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
 
 // Routes =============================================================
 
 // require("./routes/html-routes.js")(app);
 // require("./routes/post-api-routes.js")(app);
 // require("./routes/author-api-routes.js")(app);
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/rppsController.js");
+
+app.use("/", routes);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function() {
