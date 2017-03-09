@@ -67,13 +67,17 @@ $("#firstbutton").on("click", function(event) {
           .done(function(response) {
               
               var res = JSON.stringify(response, null, 2);
+              $('#search-results').append("<ul id='searchResultsList'></ul>");
               console.log("FIRST AJAX CALL RESULTS - BEGINNING");
               for (var i = 0; i < res.length; i++) {
-                console.log(response.results[i].jobtitle);
-                console.log(response.results[i].company);
-                console.log(response.results[i].formattedLocation);
-                console.log(response.results[i].snippet);
-                console.log(response.results[i].url);
+                $("#searchResultsList").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
+                 + "<h5>" + response.results[i].company + "</h5>" + 
+                  "<h5>" + response.results[i].formattedLocation + "</h5>"
+                 + "</li>" + "<br>");
+                console.log(response.results[i].company)
+                console.log(response.results[i].formattedLocation)
+                console.log(response.results[i].snippet)
+                console.log(response.results[i].url)
               };
               console.log("FIRST AJAX CALL RESULTS - END");
               
@@ -87,8 +91,13 @@ $("#firstbutton").on("click", function(event) {
           .done(function(response) {
               
               var res = JSON.stringify(response, null, 2);
+              $('#search-results2').append("<ul id='searchResultsList2'></ul>");
               console.log("SECOND AJAX CALL RESULTS - BEGINNING");
               for (var i = 0; i < res.length; i++) {
+                $("#searchResultsList2").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
+                 + "<h5>" + response.results[i].company + "</h5>" + 
+                  "<h5>" + response.results[i].formattedLocation + "</h5>" 
+                 + "</li>" + "<br>");
                 console.log(response.results[i].jobtitle);
                 console.log(response.results[i].company);
                 console.log(response.results[i].formattedLocation);
