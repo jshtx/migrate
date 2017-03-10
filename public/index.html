@@ -3,11 +3,6 @@
 <head>
 <title>migrate</title>
 
-<!-- /javascript -->
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/modernizr.js"></script>
-<!-- /javascript --> 
-
 <!-- link to jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -29,6 +24,7 @@
 <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/jquery.countdown.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 <!-- /css -->
 
 
@@ -49,6 +45,11 @@
 <script src="https://cdn.auth0.com/js/lock/10.8/lock.min.js"></script>
 <!-- Setting the right viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- /javascript -->
+
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<!-- /javascript -->
 
 </head>
 <body>
@@ -64,7 +65,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
             </button>
-			<a class="navbar-brand" href="index.html"><h1>migrate</h1></a>
+            <img id="logo" src="../public/assets/img/logo.png">
+			<a class="navbar-brand" href="index.html"><h1>m<span style="color: #efa656">i</span>grate</h1></a>
+
+
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -82,7 +86,7 @@
         						<label>Enter City 1</label>
         						<input type="text" id="city-input">
         						<label>Enter City 2</label>
-        						<input type="text" id="city-input2" value="">
+        						<input type="text" id="city-input2">
     						
     
     						<button id="firstbutton"> Submit </button>
@@ -562,8 +566,6 @@
 		    <script async defer
 		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh-Wh3wjiHHjHMn7s7Z3uEbanawdTN7sU&callback=initMap">
 		    </script>
-		    <script type="text/javascript" src="../db/cityScores.js"></script>
-		    <script type="text/javascript" src="../db/citySurvey.js"></script>
 		</div>
 	</section>
 	<!-- /banner section -->
