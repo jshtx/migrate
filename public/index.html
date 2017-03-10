@@ -3,6 +3,11 @@
 <head>
 <title>migrate</title>
 
+<!-- /javascript -->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
+<!-- /javascript --> 
+
 <!-- link to jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -44,11 +49,6 @@
 <script src="https://cdn.auth0.com/js/lock/10.8/lock.min.js"></script>
 <!-- Setting the right viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<!-- /javascript -->
-
-<script type="text/javascript" src="js/modernizr.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<!-- /javascript -->
 
 </head>
 <body>
@@ -82,7 +82,7 @@
         						<label>Enter City 1</label>
         						<input type="text" id="city-input">
         						<label>Enter City 2</label>
-        						<input type="text" id="city-input2">
+        						<input type="text" id="city-input2" value="">
     						
     
     						<button id="firstbutton"> Submit </button>
@@ -562,6 +562,8 @@
 		    <script async defer
 		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh-Wh3wjiHHjHMn7s7Z3uEbanawdTN7sU&callback=initMap">
 		    </script>
+		    <script type="text/javascript" src="../db/cityScores.js"></script>
+		    <script type="text/javascript" src="../db/citySurvey.js"></script>
 		</div>
 	</section>
 	<!-- /banner section -->
