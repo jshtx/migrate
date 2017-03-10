@@ -1,3 +1,4 @@
+window.onload = function(){
 //start of code to log selection.
 var values = ["100","100","100","100","100","100","100","100","100","100"];
 
@@ -135,7 +136,7 @@ function myBestMatch() {
         totalDifference = totalDifference + Math.abs(parseInt(values[j]) - parseInt(cityScores[i].scores[j]));
       }
     }
-    console.log(totalDifference);
+    // console.log(totalDifference);
 
     // If the sum of differences is less then the differences of the current "best match"
     if (totalDifference <= bestMatch.cityDifference) {
@@ -146,7 +147,9 @@ function myBestMatch() {
       bestMatch.cityDifference = totalDifference;
     }
   }
-  console.log(bestMatch);
-  console.log(values);
+  console.log(bestMatch.city + ", " + bestMatch.state);
+  document.getElementById("city-input2").value = bestMatch.city + ", " + bestMatch.state;
+  // console.log(values);
 };
 }
+
