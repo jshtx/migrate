@@ -3214,3 +3214,8 @@ $("#firstbutton").on("click", function(event) {
 
 };
 
+
+$('#clearbutton').click(function() {
+  window.location.reload();
+});
+
