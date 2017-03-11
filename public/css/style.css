@@ -41,6 +41,20 @@ label{
 	margin:0;
 	color: #dfef89;
 }
+
+#submit {
+	margin-right: 50px;
+}
+
+#searchResultsList {
+	margin-top: 50px;
+}
+
+#searchResultsList2 {
+	margin-top: 50px;
+	margin-left: 139px;
+}
+
 button{
 	width:130px;
 	background-color: rgb(146, 128, 92);
