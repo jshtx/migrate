@@ -50,31 +50,31 @@ $("#firstbutton").on("click", function(event) {
         .done(function(response) {
 
             var results1num1 = response.health_care_index;
-            var results1num1 = (results1).toFixed(0);
+            var results1num1 = (results1num1).toFixed(0);
 
             var results2num1 = response.crime_index;
-            var results2num1 = (results2).toFixed(0);
+            var results2num1 = (results2num1).toFixed(0);
 
             var results3num1 = response.traffic_time_index;
-            var results3num1 = (results3).toFixed(0);
+            var results3num1 = (results3num1).toFixed(0);
 
             var results4num1 = response.quality_of_life_index;
-            var results4num1 = (results4).toFixed(0);
+            var results4num1 = (results4num1).toFixed(0);
 
 
             var results5num1 = response.safety_index;
-            var results5num1 = (results5).toFixed(0);
+            var results5num1 = (results5num1).toFixed(0);
 
 
             var results6num1 = response.rent_index;
-            var results6num1 = (results6).toFixed(0);
+            var results6num1 = (results6num1).toFixed(0);
 
 
             var results7num1 = response.pollution_index;
-            var results7num1 = (results7).toFixed(0);
+            var results7num1 = (results7num1).toFixed(0);
 
             var results8num1 = response.groceries_index;
-            var results8num1 = (results8).toFixed(0);
+            var results8num1 = (results8num1).toFixed(0);
 
             $('#city-div').html('');
 
@@ -126,7 +126,7 @@ $("#firstbutton").on("click", function(event) {
             var results3num2 = (results3num2).toFixed(0);
 
             var results4num2 = response.quality_of_life_index;
-            var results4num2 = (results4num2num2).toFixed(0);
+            var results4num2 = (results4num2).toFixed(0);
 
 
             var results5num2 = response.safety_index;
@@ -1748,18 +1748,45 @@ $("#firstbutton").on("click", function(event) {
                   {cityName: "Yuba City, CA", indexScore: 98.5},
                   {cityName: "Yuma, AZ", indexScore: 93.3}];
 
+                $("#salaries").on("click", function(event) {
+                    $('#city-div').html('');
+                    $('#city-div2').html('');
+                    $('#city-div').append("<h3 id='salcomparison'>Salary Parity</h3><form><h5 class='salaryComp'>Enter your current or prospective salary (e.g. 50000 for $50K):</h5><br><input type='text' id='salComp' name='salComp' style='color: black;background-color: white;z-index: 1001;opacity: 1;position: relative;''><button type='submit' value='submit' id='salSubmit' style='margin-left:30px'>Submit</button>");
+                    var city = $("city-input").val();
+                    var city2 = $("city-input2").val();
+                    $("#salSubmit").on("click", function(event) {
+                        event.preventDefault();
+                        var salary = $("#salComp").val().trim();
+                        for (var i = 0; i < rpps.length; i++) {
+                            if (city === rpps[i].cityName) {
+                                console.log("success" + city);
+                            } else {
+                                console.log("nope");
+                            }
+                        };
+                        for (var i = 0; i < rpps.length; i++) {
+                            if (city2 === rpps[i].cityName) {
+                                console.log("success" + city2);
+                            } else {
+                                console.log("nope");
+                            }
+                        };
+                    });
+                });
 
 
 
 // BEGINNING OF INDEED API AJAX CALL
   $("#submit").on("click", function(event) {
 
+      event.preventDefault();
+
       var jobTitle = $("#jobTitle").val().trim();
       var jobTitle2 = $("#jobTitle2").val().trim();
       var jobCity = $("#city-input").val().trim();
       var jobCity2 = $("#city-input2").val().trim();
-      var jobState = $("#jobState").val().trim();
-      var jobState2 = $("#jobState2").val().trim();
+      // var jobState = $("#jobState").val().trim();
+      // var jobState2 = $("#jobState2").val().trim();
       var jobType = $("#jobType").val().trim();
       var jobType2 = $("#jobType2").val().trim();
       var jobSite = $("#jobSite").val().trim();
@@ -1769,11 +1796,10 @@ $("#firstbutton").on("click", function(event) {
       var jobDistance = $("#jobDistance").val().trim();
       var jobDistance2 = $("#jobDistance2").val().trim();
 
-      event.preventDefault();
       console.log(jobCity);
       console.log(jobCity2);
-      var queryURL = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle+"&l="+jobCity+"%2C+"+jobState+"&sort=&radius="+jobDistance+"&st="+jobSite+"&jt="+jobType+"&salary="+jobSalary+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
-      var queryURL2 = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle2+"&l="+jobCity2+"%2C+"+jobState2+"&sort=&radius="+jobDistance2+"&st="+jobSite2+"&jt="+jobType2+"&salary="+jobSalary2+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
+      var queryURL = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle+"&l="+jobCity+"&sort=&radius="+jobDistance+"&st="+jobSite+"&jt="+jobType+"&salary="+jobSalary+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
+      var queryURL2 = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle2+"&l="+jobCity2+"&sort=&radius="+jobDistance2+"&st="+jobSite2+"&jt="+jobType2+"&salary="+jobSalary2+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
   
       $.ajax({
               url: queryURL,
@@ -1788,7 +1814,7 @@ $("#firstbutton").on("click", function(event) {
               for (var i = 0; i < res.length; i++) {
                 $("#searchResultsList").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
                  + "<h5>" + response.results[i].company + "</h5>" + 
-                  "<h5>" + response.results[i].formattedLocation + "</h5>"
+                  "<h5>" + response.results[i].formattedLocation + "</h5>" + "<h5>" + "<a target='_blank' href=" + response.results[i].url +">More Info</a>" + "</h5>"
                  + "</li>" + "<br>");
                 console.log(response.results[i].jobtitle);
                 console.log(response.results[i].company);
@@ -1813,7 +1839,7 @@ $("#firstbutton").on("click", function(event) {
               for (var i = 0; i < res.length; i++) {
                 $("#searchResultsList2").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
                  + "<h5>" + response.results[i].company + "</h5>" + 
-                  "<h5>" + response.results[i].formattedLocation + "</h5>" 
+                  "<h5>" + response.results[i].formattedLocation + "</h5>" + "<h5>" + "<a target='_blank' href=" + response.results[i].url +">More Info</a>" + "</h5>"
                  + "</li>" + "<br>");
                 console.log(response.results[i].jobtitle);
                 console.log(response.results[i].company);
