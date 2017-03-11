@@ -36,7 +36,7 @@ $("#firstbutton").on("click", function(event) {
             //$('#city-div').append("Use the buttons above");
             $('#city-div').append(function(event){
 
-                    var city = $("#city-input").val().trim();
+                    var city = $("#city-input").val().trim().toLowerCase();
 
 
 
@@ -103,7 +103,7 @@ $("#firstbutton").on("click", function(event) {
             $('#city-div').prepend(" <a><img src='https://www.aupaathletic.com/comun/imagenes/icon-info.png'></a>" + "<div class='test'>Groceries Index is an estimation of grocery prices in the city compared to New York City.</div>");
         });
 
-        var city2 = $("#city-input2").val().trim();
+        var city2 = $("#city-input2").val().trim().toLowerCase();
 
 
 
@@ -1230,1981 +1230,600 @@ $("#firstbutton").on("click", function(event) {
 
   
             // Salary Comparison info -- couldn't get Node.js and jQuery to cooperate so I put all the info in here
-        var rpps = [
-          {
-            Index: "87.8",
-            GeoFips: "999",
-            GeoName: "United States"
-          },
-          {
-            Index: "91.7",
-            GeoFips: "10180",
-            GeoName: "Abilene, TX "
-          },
-          {
-            Index: "88.8",
-            GeoFips: "10420",
-            GeoName: "Akron, OH "
-          },
-          {
-            Index: "84",
-            GeoFips: "10500",
-            GeoName: "Albany, GA "
-          },
-          {
-            Index: "94",
-            GeoFips: "10540",
-            GeoName: "Albany, OR "
-          },
-          {
-            Index: "99.2",
-            GeoFips: "10580",
-            GeoName: "Albany-Schenectady-Troy, NY "
-          },
-          {
-            Index: "97.2",
-            GeoFips: "10740",
-            GeoName: "Albuquerque, NM "
-          },
-          {
-            Index: "89",
-            GeoFips: "10780",
-            GeoName: "Alexandria, LA "
-          },
-          {
-            Index: "100.3",
-            GeoFips: "10900",
-            GeoName: "Allentown-Bethlehem-Easton, PA-NJ "
-          },
-          {
-            Index: "90",
-            GeoFips: "11020",
-            GeoName: "Altoona, PA "
-          },
-          {
-            Index: "93.1",
-            GeoFips: "11100",
-            GeoName: "Amarillo, TX "
-          },
-          {
-            Index: "90.2",
-            GeoFips: "11180",
-            GeoName: "Ames, IA "
-          },
-          {
-            Index: "109.6",
-            GeoFips: "11260",
-            GeoName: "Anchorage, AK "
-          },
-          {
-            Index: "102",
-            GeoFips: "11460",
-            GeoName: "Ann Arbor, MI "
-          },
-          {
-            Index: "84.6",
-            GeoFips: "11500",
-            GeoName: "Anniston-Oxford-Jacksonville, AL "
-          },
-          {
-            Index: "92.7",
-            GeoFips: "11540",
-            GeoName: "Appleton, WI "
-          },
-          {
-            Index: "93.2",
-            GeoFips: "11700",
-            GeoName: "Asheville, NC "
-          },
-          {
-            Index: "92",
-            GeoFips: "12020",
-            GeoName: "Athens-Clarke County, GA "
-          },
-          {
-            Index: "95.6",
-            GeoFips: "12060",
-            GeoName: "Atlanta-Sandy Springs-Roswell, GA "
-          },
-          {
-            Index: "107",
-            GeoFips: "12100",
-            GeoName: "Atlantic City-Hammonton, NJ "
-          },
-          {
-            Index: "85.8",
-            GeoFips: "12220",
-            GeoName: "Auburn-Opelika, AL "
-          },
-          {
-            Index: "89.3",
-            GeoFips: "12260",
-            GeoName: "Augusta-Richmond County, GA-SC "
-          },
-          {
-            Index: "99",
-            GeoFips: "12420",
-            GeoName: "Austin-Round Rock, TX "
-          },
-          {
-            Index: "97.8",
-            GeoFips: "12540",
-            GeoName: "Bakersfield, CA "
-          },
-          {
-            Index: "108",
-            GeoFips: "12580",
-            GeoName: "Baltimore-Columbia-Towson, MD "
-          },
-          {
-            Index: "95.9",
-            GeoFips: "12620",
-            GeoName: "Bangor, ME "
-          },
-          {
-            Index: "101.9",
-            GeoFips: "12700",
-            GeoName: "Barnstable Town, MA "
-          },
-          {
-            Index: "93.3",
-            GeoFips: "12940",
-            GeoName: "Baton Rouge, LA "
-          },
-          {
-            Index: "91.6",
-            GeoFips: "12980",
-            GeoName: "Battle Creek, MI "
-          },
-          {
-            Index: "90.2",
-            GeoFips: "13020",
-            GeoName: "Bay City, MI "
-          },
-          {
-            Index: "90.3",
-            GeoFips: "13140",
-            GeoName: "Beaumont-Port Arthur, TX "
-          },
-          {
-            Index: "79.7",
-            GeoFips: "13220",
-            GeoName: "Beckley, WV "
-          },
-          {
-            Index: "100.1",
-            GeoFips: "13380",
-            GeoName: "Bellingham, WA "
-          },
-          {
-            Index: "95.8",
-            GeoFips: "13460",
-            GeoName: "Bend-Redmond, OR "
-          },
-          {
-            Index: "97.7",
-            GeoFips: "13740",
-            GeoName: "Billings, MT "
-          },
-          {
-            Index: "95",
-            GeoFips: "13780",
-            GeoName: "Binghamton, NY "
-          },
-          {
-            Index: "89.9",
-            GeoFips: "13820",
-            GeoName: "Birmingham-Hoover, AL "
-          },
-          {
-            Index: "94",
-            GeoFips: "13900",
-            GeoName: "Bismarck, ND "
-          },
-          {
-            Index: "88.2",
-            GeoFips: "13980",
-            GeoName: "Blacksburg-Christiansburg-Radford, VA "
-          },
-          {
-            Index: "94.1",
-            GeoFips: "14010",
-            GeoName: "Bloomington, IL "
-          },
-          {
-            Index: "94.9",
-            GeoFips: "14020",
-            GeoName: "Bloomington, IN "
-          },
-          {
-            Index: "93",
-            GeoFips: "14100",
-            GeoName: "Bloomsburg-Berwick, PA "
-          },
-          {
-            Index: "95.1",
-            GeoFips: "14260",
-            GeoName: "Boise City, ID "
-          },
-          {
-            Index: "110.3",
-            GeoFips: "14460",
-            GeoName: "Boston-Cambridge-Newton, MA-NH "
-          },
-          {
-            Index: "109.1",
-            GeoFips: "14500",
-            GeoName: "Boulder, CO "
-          },
-          {
-            Index: "85.8",
-            GeoFips: "14540",
-            GeoName: "Bowling Green, KY "
-          },
-          {
-            Index: "105",
-            GeoFips: "14740",
-            GeoName: "Bremerton-Silverdale, WA "
-          },
-          {
-            Index: "120.4",
-            GeoFips: "14860",
-            GeoName: "Bridgeport-Stamford-Norwalk, CT "
-          },
-          {
-            Index: "85",
-            GeoFips: "15180",
-            GeoName: "Brownsville-Harlingen, TX "
-          },
-          {
-            Index: "86",
-            GeoFips: "15260",
-            GeoName: "Brunswick, GA "
-          },
-          {
-            Index: "93.8",
-            GeoFips: "15380",
-            GeoName: "Buffalo-Cheektowaga-Niagara Falls, NY "
-          },
-          {
-            Index: "90.5",
-            GeoFips: "15500",
-            GeoName: "Burlington, NC "
-          },
-          {
-            Index: "102.7",
-            GeoFips: "15540",
-            GeoName: "Burlington-South Burlington, VT "
-          },
-          {
-            Index: "98.2",
-            GeoFips: "15680",
-            GeoName: "California-Lexington Park, MD "
-          },
-          {
-            Index: "89.3",
-            GeoFips: "15940",
-            GeoName: "Canton-Massillon, OH "
-          },
-          {
-            Index: "95.1",
-            GeoFips: "15980",
-            GeoName: "Cape Coral-Fort Myers, FL "
-          },
-          {
-            Index: "83.5",
-            GeoFips: "16020",
-            GeoName: "Cape Girardeau, MO-IL "
-          },
-          {
-            Index: "84",
-            GeoFips: "16060",
-            GeoName: "Carbondale-Marion, IL "
-          },
-          {
-            Index: "95.9",
-            GeoFips: "16180",
-            GeoName: "Carson City, NV "
-          },
-          {
-            Index: "97.9",
-            GeoFips: "16220",
-            GeoName: "Casper, WY "
-          },
-          {
-            Index: "90.6",
-            GeoFips: "16300",
-            GeoName: "Cedar Rapids, IA "
-          },
-          {
-            Index: "94.1",
-            GeoFips: "16540",
-            GeoName: "Chambersburg-Waynesboro, PA "
-          },
-          {
-            Index: "93.4",
-            GeoFips: "16580",
-            GeoName: "Champaign-Urbana, IL "
-          },
-          {
-            Index: "89",
-            GeoFips: "16620",
-            GeoName: "Charleston, WV "
-          },
-          {
-            Index: "96.3",
-            GeoFips: "16700",
-            GeoName: "Charleston-North Charleston, SC "
-          },
-          {
-            Index: "93.6",
-            GeoFips: "16740",
-            GeoName: "Charlotte-Concord-Gastonia, NC-SC "
-          },
-          {
-            Index: "97.8",
-            GeoFips: "16820",
-            GeoName: "Charlottesville, VA "
-          },
-          {
-            Index: "90.6",
-            GeoFips: "16860",
-            GeoName: "Chattanooga, TN-GA "
-          },
-          {
-            Index: "97.6",
-            GeoFips: "16940",
-            GeoName: "Cheyenne, WY "
-          },
-          {
-            Index: "106",
-            GeoFips: "16980",
-            GeoName: "Chicago-Naperville-Elgin, IL-IN-WI "
-          },
-          {
-            Index: "100",
-            GeoFips: "17020",
-            GeoName: "Chico, CA "
-          },
-          {
-            Index: "89.8",
-            GeoFips: "17140",
-            GeoName: "Cincinnati, OH-KY-IN "
-          },
-          {
-            Index: "91.3",
-            GeoFips: "17300",
-            GeoName: "Clarksville, TN-KY "
-          },
-          {
-            Index: "84.1",
-            GeoFips: "17420",
-            GeoName: "Cleveland, TN "
-          },
-          {
-            Index: "89.1",
-            GeoFips: "17460",
-            GeoName: "Cleveland-Elyria, OH "
-          },
-          {
-            Index: "92.9",
-            GeoFips: "17660",
-            GeoName: "Coeur d'Alene, ID "
-          },
-          {
-            Index: "93.9",
-            GeoFips: "17780",
-            GeoName: "College Station-Bryan, TX "
-          },
-          {
-            Index: "99.7",
-            GeoFips: "17820",
-            GeoName: "Colorado Springs, CO "
-          },
-          {
-            Index: "93",
-            GeoFips: "17860",
-            GeoName: "Columbia, MO "
-          },
-          {
-            Index: "91.9",
-            GeoFips: "17900",
-            GeoName: "Columbia, SC "
-          },
-          {
-            Index: "89.5",
-            GeoFips: "17980",
-            GeoName: "Columbus, GA-AL "
-          },
-          {
-            Index: "87.7",
-            GeoFips: "18020",
-            GeoName: "Columbus, IN "
-          },
-          {
-            Index: "93.4",
-            GeoFips: "18140",
-            GeoName: "Columbus, OH "
-          },
-          {
-            Index: "93.5",
-            GeoFips: "18580",
-            GeoName: "Corpus Christi, TX "
-          },
-          {
-            Index: "98.6",
-            GeoFips: "18700",
-            GeoName: "Corvallis, OR "
-          },
-          {
-            Index: "95.3",
-            GeoFips: "18880",
-            GeoName: "Crestview-Fort Walton Beach-Destin, FL "
-          },
-          {
-            Index: "88.4",
-            GeoFips: "19060",
-            GeoName: "Cumberland, MD-WV "
-          },
-          {
-            Index: "100.4",
-            GeoFips: "19100",
-            GeoName: "Dallas-Fort Worth-Arlington, TX "
-          },
-          {
-            Index: "83.9",
-            GeoFips: "19140",
-            GeoName: "Dalton, GA "
-          },
-          {
-            Index: "81.1",
-            GeoFips: "19180",
-            GeoName: "Danville, IL "
-          },
-          {
-            Index: "92.3",
-            GeoFips: "19300",
-            GeoName: "Daphne-Fairhope-Foley, AL "
-          },
-          {
-            Index: "91.4",
-            GeoFips: "19340",
-            GeoName: "Davenport-Moline-Rock Island, IA-IL "
-          },
-          {
-            Index: "90.9",
-            GeoFips: "19380",
-            GeoName: "Dayton, OH "
-          },
-          {
-            Index: "87.1",
-            GeoFips: "19460",
-            GeoName: "Decatur, AL "
-          },
-          {
-            Index: "89",
-            GeoFips: "19500",
-            GeoName: "Decatur, IL "
-          },
-          {
-            Index: "95.7",
-            GeoFips: "19660",
-            GeoName: "Deltona-Daytona Beach-Ormond Beach, FL "
-          },
-          {
-            Index: "104.7",
-            GeoFips: "19740",
-            GeoName: "Denver-Aurora-Lakewood, CO "
-          },
-          {
-            Index: "94.9",
-            GeoFips: "19780",
-            GeoName: "Des Moines-West Des Moines, IA "
-          },
-          {
-            Index: "97.3",
-            GeoFips: "19820",
-            GeoName: "Detroit-Warren-Dearborn, MI "
-          },
-          {
-            Index: "85.4",
-            GeoFips: "20020",
-            GeoName: "Dothan, AL "
-          },
-          {
-            Index: "94.2",
-            GeoFips: "20100",
-            GeoName: "Dover, DE "
-          },
-          {
-            Index: "92.9",
-            GeoFips: "20220",
-            GeoName: "Dubuque, IA "
-          },
-          {
-            Index: "91.7",
-            GeoFips: "20260",
-            GeoName: "Duluth, MN-WI "
-          },
-          {
-            Index: "95.4",
-            GeoFips: "20500",
-            GeoName: "Durham-Chapel Hill, NC "
-          },
-          {
-            Index: "98.8",
-            GeoFips: "20700",
-            GeoName: "East Stroudsburg, PA "
-          },
-          {
-            Index: "92.1",
-            GeoFips: "20740",
-            GeoName: "Eau Claire, WI "
-          },
-          {
-            Index: "90.4",
-            GeoFips: "20940",
-            GeoName: "El Centro, CA "
-          },
-          {
-            Index: "86",
-            GeoFips: "21060",
-            GeoName: "Elizabethtown-Fort Knox, KY "
-          },
-          {
-            Index: "91",
-            GeoFips: "21140",
-            GeoName: "Elkhart-Goshen, IN "
-          },
-          {
-            Index: "94.5",
-            GeoFips: "21300",
-            GeoName: "Elmira, NY "
-          },
-          {
-            Index: "90.2",
-            GeoFips: "21340",
-            GeoName: "El Paso, TX "
-          },
-          {
-            Index: "(NA)",
-            GeoFips: "21420",
-            GeoName: "Enid, OK 1/"
-          },
-          {
-            Index: "92.5",
-            GeoFips: "21500",
-            GeoName: "Erie, PA "
-          },
-          {
-            Index: "98.2",
-            GeoFips: "21660",
-            GeoName: "Eugene, OR "
-          },
-          {
-            Index: "90.8",
-            GeoFips: "21780",
-            GeoName: "Evansville, IN-KY "
-          },
-          {
-            Index: "105.8",
-            GeoFips: "21820",
-            GeoName: "Fairbanks, AK "
-          },
-          {
-            Index: "93.5",
-            GeoFips: "22020",
-            GeoName: "Fargo, ND-MN "
-          },
-          {
-            Index: "91.1",
-            GeoFips: "22140",
-            GeoName: "Farmington, NM "
-          },
-          {
-            Index: "91.5",
-            GeoFips: "22180",
-            GeoName: "Fayetteville, NC "
-          },
-          {
-            Index: "90.1",
-            GeoFips: "22220",
-            GeoName: "Fayetteville-Springdale-Rogers, AR-MO "
-          },
-          {
-            Index: "97.9",
-            GeoFips: "22380",
-            GeoName: "Flagstaff, AZ "
-          },
-          {
-            Index: "92.8",
-            GeoFips: "22420",
-            GeoName: "Flint, MI "
-          },
-          {
-            Index: "86",
-            GeoFips: "22500",
-            GeoName: "Florence, SC "
-          },
-          {
-            Index: "84.4",
-            GeoFips: "22520",
-            GeoName: "Florence-Muscle Shoals, AL "
-          },
-          {
-            Index: "87.3",
-            GeoFips: "22540",
-            GeoName: "Fond du Lac, WI "
-          },
-          {
-            Index: "101.4",
-            GeoFips: "22660",
-            GeoName: "Fort Collins, CO "
-          },
-          {
-            Index: "86.2",
-            GeoFips: "22900",
-            GeoName: "Fort Smith, AR-OK "
-          },
-          {
-            Index: "90.7",
-            GeoFips: "23060",
-            GeoName: "Fort Wayne, IN "
-          },
-          {
-            Index: "97.3",
-            GeoFips: "23420",
-            GeoName: "Fresno, CA "
-          },
-          {
-            Index: "84.9",
-            GeoFips: "23460",
-            GeoName: "Gadsden, AL "
-          },
-          {
-            Index: "95.2",
-            GeoFips: "23540",
-            GeoName: "Gainesville, FL "
-          },
-          {
-            Index: "89",
-            GeoFips: "23580",
-            GeoName: "Gainesville, GA "
-          },
-          {
-            Index: "95.6",
-            GeoFips: "23900",
-            GeoName: "Gettysburg, PA "
-          },
-          {
-            Index: "96.8",
-            GeoFips: "24020",
-            GeoName: "Glens Falls, NY "
-          },
-          {
-            Index: "88.1",
-            GeoFips: "24140",
-            GeoName: "Goldsboro, NC "
-          },
-          {
-            Index: "93.8",
-            GeoFips: "24220",
-            GeoName: "Grand Forks, ND-MN "
-          },
-          {
-            Index: "85.3",
-            GeoFips: "24260",
-            GeoName: "Grand Island, NE "
-          },
-          {
-            Index: "94.4",
-            GeoFips: "24300",
-            GeoName: "Grand Junction, CO "
-          },
-          {
-            Index: "93.7",
-            GeoFips: "24340",
-            GeoName: "Grand Rapids-Wyoming, MI "
-          },
-          {
-            Index: "93.7",
-            GeoFips: "24420",
-            GeoName: "Grants Pass, OR "
-          },
-          {
-            Index: "93.8",
-            GeoFips: "24500",
-            GeoName: "Great Falls, MT "
-          },
-          {
-            Index: "98.9",
-            GeoFips: "24540",
-            GeoName: "Greeley, CO "
-          },
-          {
-            Index: "92",
-            GeoFips: "24580",
-            GeoName: "Green Bay, WI "
-          },
-          {
-            Index: "90.3",
-            GeoFips: "24660",
-            GeoName: "Greensboro-High Point, NC "
-          },
-          {
-            Index: "88.9",
-            GeoFips: "24780",
-            GeoName: "Greenville, NC "
-          },
-          {
-            Index: "90.2",
-            GeoFips: "24860",
-            GeoName: "Greenville-Anderson-Mauldin, SC "
-          },
-          {
-            Index: "90.2",
-            GeoFips: "25060",
-            GeoName: "Gulfport-Biloxi-Pascagoula, MS "
-          },
-          {
-            Index: "101.9",
-            GeoFips: "25180",
-            GeoName: "Hagerstown-Martinsburg, MD-WV "
-          },
-          {
-            Index: "85.3",
-            GeoFips: "25220",
-            GeoName: "Hammond, LA "
-          },
-          {
-            Index: "92.8",
-            GeoFips: "25260",
-            GeoName: "Hanford-Corcoran, CA "
-          },
-          {
-            Index: "96",
-            GeoFips: "25420",
-            GeoName: "Harrisburg-Carlisle, PA "
-          },
-          {
-            Index: "91.4",
-            GeoFips: "25500",
-            GeoName: "Harrisonburg, VA "
-          },
-          {
-            Index: "100.7",
-            GeoFips: "25540",
-            GeoName: "Hartford-West Hartford-East Hartford, CT "
-          },
-          {
-            Index: "84.2",
-            GeoFips: "25620",
-            GeoName: "Hattiesburg, MS "
-          },
-          {
-            Index: "88.5",
-            GeoFips: "25860",
-            GeoName: "Hickory-Lenoir-Morganton, NC "
-          },
-          {
-            Index: "93.9",
-            GeoFips: "25940",
-            GeoName: "Hilton Head Island-Bluffton-Beaufort, SC "
-          },
-          {
-            Index: "91.5",
-            GeoFips: "25980",
-            GeoName: "Hinesville, GA "
-          },
-          {
-            Index: "88.5",
-            GeoFips: "26140",
-            GeoName: "Homosassa Springs, FL "
-          },
-          {
-            Index: "85.2",
-            GeoFips: "26300",
-            GeoName: "Hot Springs, AR "
-          },
-          {
-            Index: "93",
-            GeoFips: "26380",
-            GeoName: "Houma-Thibodaux, LA "
-          },
-          {
-            Index: "100.3",
-            GeoFips: "26420",
-            GeoName: "Houston-The Woodlands-Sugar Land, TX "
-          },
-          {
-            Index: "86.8",
-            GeoFips: "26580",
-            GeoName: "Huntington-Ashland, WV-KY-OH "
-          },
-          {
-            Index: "90.7",
-            GeoFips: "26620",
-            GeoName: "Huntsville, AL "
-          },
-          {
-            Index: "88.8",
-            GeoFips: "26820",
-            GeoName: "Idaho Falls, ID "
-          },
-          {
-            Index: "93.4",
-            GeoFips: "26900",
-            GeoName: "Indianapolis-Carmel-Anderson, IN "
-          },
-          {
-            Index: "96.3",
-            GeoFips: "26980",
-            GeoName: "Iowa City, IA "
-          },
-          {
-            Index: "104.6",
-            GeoFips: "27060",
-            GeoName: "Ithaca, NY "
-          },
-          {
-            Index: "90.6",
-            GeoFips: "27100",
-            GeoName: "Jackson, MI "
-          },
-          {
-            Index: "90.6",
-            GeoFips: "27140",
-            GeoName: "Jackson, MS "
-          },
-          {
-            Index: "83.1",
-            GeoFips: "27180",
-            GeoName: "Jackson, TN "
-          },
-          {
-            Index: "96",
-            GeoFips: "27260",
-            GeoName: "Jacksonville, FL "
-          },
-          {
-            Index: "94.2",
-            GeoFips: "27340",
-            GeoName: "Jacksonville, NC "
-          },
-          {
-            Index: "92.5",
-            GeoFips: "27500",
-            GeoName: "Janesville-Beloit, WI "
-          },
-          {
-            Index: "82.2",
-            GeoFips: "27620",
-            GeoName: "Jefferson City, MO "
-          },
-          {
-            Index: "88.6",
-            GeoFips: "27740",
-            GeoName: "Johnson City, TN "
-          },
-          {
-            Index: "85.5",
-            GeoFips: "27780",
-            GeoName: "Johnstown, PA "
-          },
-          {
-            Index: "82",
-            GeoFips: "27860",
-            GeoName: "Jonesboro, AR "
-          },
-          {
-            Index: "88.1",
-            GeoFips: "27900",
-            GeoName: "Joplin, MO "
-          },
-          {
-            Index: "106.2",
-            GeoFips: "27980",
-            GeoName: "Kahului-Wailuku-Lahaina, HI "
-          },
-          {
-            Index: "92.5",
-            GeoFips: "28020",
-            GeoName: "Kalamazoo-Portage, MI "
-          },
-          {
-            Index: "99",
-            GeoFips: "28100",
-            GeoName: "Kankakee, IL "
-          },
-          {
-            Index: "93.4",
-            GeoFips: "28140",
-            GeoName: "Kansas City, MO-KS "
-          },
-          {
-            Index: "98.1",
-            GeoFips: "28420",
-            GeoName: "Kennewick-Richland, WA "
-          },
-          {
-            Index: "92.6",
-            GeoFips: "28660",
-            GeoName: "Killeen-Temple, TX "
-          },
-          {
-            Index: "86.5",
-            GeoFips: "28700",
-            GeoName: "Kingsport-Bristol-Bristol, TN-VA "
-          },
-          {
-            Index: "103.1",
-            GeoFips: "28740",
-            GeoName: "Kingston, NY "
-          },
-          {
-            Index: "90.5",
-            GeoFips: "28940",
-            GeoName: "Knoxville, TN "
-          },
-          {
-            Index: "87.2",
-            GeoFips: "29020",
-            GeoName: "Kokomo, IN "
-          },
-          {
-            Index: "93.3",
-            GeoFips: "29100",
-            GeoName: "La Crosse-Onalaska, WI-MN "
-          },
-          {
-            Index: "89.1",
-            GeoFips: "29180",
-            GeoName: "Lafayette, LA "
-          },
-          {
-            Index: "93.9",
-            GeoFips: "29200",
-            GeoName: "Lafayette-West Lafayette, IN "
-          },
-          {
-            Index: "89.3",
-            GeoFips: "29340",
-            GeoName: "Lake Charles, LA "
-          },
-          {
-            Index: "93.6",
-            GeoFips: "29420",
-            GeoName: "Lake Havasu City-Kingman, AZ "
-          },
-          {
-            Index: "93.3",
-            GeoFips: "29460",
-            GeoName: "Lakeland-Winter Haven, FL "
-          },
-          {
-            Index: "98.4",
-            GeoFips: "29540",
-            GeoName: "Lancaster, PA "
-          },
-          {
-            Index: "93.9",
-            GeoFips: "29620",
-            GeoName: "Lansing-East Lansing, MI "
-          },
-          {
-            Index: "88.7",
-            GeoFips: "29700",
-            GeoName: "Laredo, TX "
-          },
-          {
-            Index: "92.9",
-            GeoFips: "29740",
-            GeoName: "Las Cruces, NM "
-          },
-          {
-            Index: "98.7",
-            GeoFips: "29820",
-            GeoName: "Las Vegas-Henderson-Paradise, NV "
-          },
-          {
-            Index: "94.3",
-            GeoFips: "29940",
-            GeoName: "Lawrence, KS "
-          },
-          {
-            Index: "91.1",
-            GeoFips: "30020",
-            GeoName: "Lawton, OK "
-          },
-          {
-            Index: "94.9",
-            GeoFips: "30140",
-            GeoName: "Lebanon, PA "
-          },
-          {
-            Index: "89.9",
-            GeoFips: "30300",
-            GeoName: "Lewiston, ID-WA "
-          },
-          {
-            Index: "94.7",
-            GeoFips: "30340",
-            GeoName: "Lewiston-Auburn, ME "
-          },
-          {
-            Index: "92.4",
-            GeoFips: "30460",
-            GeoName: "Lexington-Fayette, KY "
-          },
-          {
-            Index: "89.6",
-            GeoFips: "30620",
-            GeoName: "Lima, OH "
-          },
-          {
-            Index: "92.9",
-            GeoFips: "30700",
-            GeoName: "Lincoln, NE "
-          },
-          {
-            Index: "90.7",
-            GeoFips: "30780",
-            GeoName: "Little Rock-North Little Rock-Conway, AR "
-          },
-          {
-            Index: "90",
-            GeoFips: "30860",
-            GeoName: "Logan, UT-ID "
-          },
-          {
-            Index: "91.8",
-            GeoFips: "30980",
-            GeoName: "Longview, TX "
-          },
-          {
-            Index: "93.5",
-            GeoFips: "31020",
-            GeoName: "Longview, WA "
-          },
-          {
-            Index: "117",
-            GeoFips: "31080",
-            GeoName: "Los Angeles-Long Beach-Anaheim, CA "
-          },
-          {
-            Index: "91.4",
-            GeoFips: "31140",
-            GeoName: "Louisville/Jefferson County, KY-IN "
-          },
-          {
-            Index: "93.5",
-            GeoFips: "31180",
-            GeoName: "Lubbock, TX "
-          },
-          {
-            Index: "90.7",
-            GeoFips: "31340",
-            GeoName: "Lynchburg, VA "
-          },
-          {
-            Index: "87.5",
-            GeoFips: "31420",
-            GeoName: "Macon-Bibb County, GA "
-          },
-          {
-            Index: "96.8",
-            GeoFips: "31460",
-            GeoName: "Madera, CA "
-          },
-          {
-            Index: "97.8",
-            GeoFips: "31540",
-            GeoName: "Madison, WI "
-          },
-          {
-            Index: "108.2",
-            GeoFips: "31700",
-            GeoName: "Manchester-Nashua, NH "
-          },
-          {
-            Index: "92.9",
-            GeoFips: "31740",
-            GeoName: "Manhattan, KS "
-          },
-          {
-            Index: "89.3",
-            GeoFips: "31860",
-            GeoName: "Mankato-North Mankato, MN "
-          },
-          {
-            Index: "87.1",
-            GeoFips: "31900",
-            GeoName: "Mansfield, OH "
-          },
-          {
-            Index: "85.7",
-            GeoFips: "32580",
-            GeoName: "McAllen-Edinburg-Mission, TX "
-          },
-          {
-            Index: "98.2",
-            GeoFips: "32780",
-            GeoName: "Medford, OR "
-          },
-          {
-            Index: "91.9",
-            GeoFips: "32820",
-            GeoName: "Memphis, TN-MS-AR "
-          },
-          {
-            Index: "95.5",
-            GeoFips: "32900",
-            GeoName: "Merced, CA "
-          },
-          {
-            Index: "105.9",
-            GeoFips: "33100",
-            GeoName: "Miami-Fort Lauderdale-West Palm Beach, FL "
-          },
-          {
-            Index: "85.9",
-            GeoFips: "33140",
-            GeoName: "Michigan City-La Porte, IN "
-          },
-          {
-            Index: "92.4",
-            GeoFips: "33220",
-            GeoName: "Midland, MI "
-          },
-          {
-            Index: "99.3",
-            GeoFips: "33260",
-            GeoName: "Midland, TX "
-          },
-          {
-            Index: "95.9",
-            GeoFips: "33340",
-            GeoName: "Milwaukee-Waukesha-West Allis, WI "
-          },
-          {
-            Index: "102.6",
-            GeoFips: "33460",
-            GeoName: "Minneapolis-St. Paul-Bloomington, MN-WI "
-          },
-          {
-            Index: "95.8",
-            GeoFips: "33540",
-            GeoName: "Missoula, MT "
-          },
-          {
-            Index: "88.6",
-            GeoFips: "33660",
-            GeoName: "Mobile, AL "
-          },
-          {
-            Index: "98.7",
-            GeoFips: "33700",
-            GeoName: "Modesto, CA "
-          },
-          {
-            Index: "86.3",
-            GeoFips: "33740",
-            GeoName: "Monroe, LA "
-          },
-          {
-            Index: "95.4",
-            GeoFips: "33780",
-            GeoName: "Monroe, MI "
-          },
-          {
-            Index: "89.7",
-            GeoFips: "33860",
-            GeoName: "Montgomery, AL "
-          },
-          {
-            Index: "88.5",
-            GeoFips: "34060",
-            GeoName: "Morgantown, WV "
-          },
-          {
-            Index: "81.9",
-            GeoFips: "34100",
-            GeoName: "Morristown, TN "
-          },
-          {
-            Index: "97.3",
-            GeoFips: "34580",
-            GeoName: "Mount Vernon-Anacortes, WA "
-          },
-          {
-            Index: "89.6",
-            GeoFips: "34620",
-            GeoName: "Muncie, IN "
-          },
-          {
-            Index: "88.7",
-            GeoFips: "34740",
-            GeoName: "Muskegon, MI "
-          },
-          {
-            Index: "91.1",
-            GeoFips: "34820",
-            GeoName: "Myrtle Beach-Conway-North Myrtle Beach, SC-NC "
-          },
-          {
-            Index: "118.9",
-            GeoFips: "34900",
-            GeoName: "Napa, CA "
-          },
-          {
-            Index: "99.6",
-            GeoFips: "34940",
-            GeoName: "Naples-Immokalee-Marco Island, FL "
-          },
-          {
-            Index: "93.9",
-            GeoFips: "34980",
-            GeoName: "Nashville-Davidson--Murfreesboro--Franklin, TN "
-          },
-          {
-            Index: "87.1",
-            GeoFips: "35100",
-            GeoName: "New Bern, NC "
-          },
-          {
-            Index: "112.9",
-            GeoFips: "35300",
-            GeoName: "New Haven-Milford, CT "
-          },
-          {
-            Index: "96",
-            GeoFips: "35380",
-            GeoName: "New Orleans-Metairie, LA "
-          },
-          {
-            Index: "122.3",
-            GeoFips: "35620",
-            GeoName: "New York-Newark-Jersey City, NY-NJ-PA "
-          },
-          {
-            Index: "89.2",
-            GeoFips: "35660",
-            GeoName: "Niles-Benton Harbor, MI "
-          },
-          {
-            Index: "98.7",
-            GeoFips: "35840",
-            GeoName: "North Port-Sarasota-Bradenton, FL "
-          },
-          {
-            Index: "100.5",
-            GeoFips: "35980",
-            GeoName: "Norwich-New London, CT "
-          },
-          {
-            Index: "90.8",
-            GeoFips: "36100",
-            GeoName: "Ocala, FL "
-          },
-          {
-            Index: "107.2",
-            GeoFips: "36140",
-            GeoName: "Ocean City, NJ "
-          },
-          {
-            Index: "96.6",
-            GeoFips: "36220",
-            GeoName: "Odessa, TX "
-          },
-          {
-            Index: "95.9",
-            GeoFips: "36260",
-            GeoName: "Ogden-Clearfield, UT "
-          },
-          {
-            Index: "92.4",
-            GeoFips: "36420",
-            GeoName: "Oklahoma City, OK "
-          },
-          {
-            Index: "105.4",
-            GeoFips: "36500",
-            GeoName: "Olympia-Tumwater, WA "
-          },
-          {
-            Index: "94.1",
-            GeoFips: "36540",
-            GeoName: "Omaha-Council Bluffs, NE-IA "
-          },
-          {
-            Index: "97.8",
-            GeoFips: "36740",
-            GeoName: "Orlando-Kissimmee-Sanford, FL "
-          },
-          {
-            Index: "91.8",
-            GeoFips: "36780",
-            GeoName: "Oshkosh-Neenah, WI "
-          },
-          {
-            Index: "87.6",
-            GeoFips: "36980",
-            GeoName: "Owensboro, KY "
-          },
-          {
-            Index: "114.7",
-            GeoFips: "37100",
-            GeoName: "Oxnard-Thousand Oaks-Ventura, CA "
-          },
-          {
-            Index: "95.2",
-            GeoFips: "37340",
-            GeoName: "Palm Bay-Melbourne-Titusville, FL "
-          },
-          {
-            Index: "94.9",
-            GeoFips: "37460",
-            GeoName: "Panama City, FL "
-          },
-          {
-            Index: "85.5",
-            GeoFips: "37620",
-            GeoName: "Parkersburg-Vienna, WV "
-          },
-          {
-            Index: "93.5",
-            GeoFips: "37860",
-            GeoName: "Pensacola-Ferry Pass-Brent, FL "
-          },
-          {
-            Index: "91.8",
-            GeoFips: "37900",
-            GeoName: "Peoria, IL "
-          },
-          {
-            Index: "107.2",
-            GeoFips: "37980",
-            GeoName: "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD "
-          },
-          {
-            Index: "97.7",
-            GeoFips: "38060",
-            GeoName: "Phoenix-Mesa-Scottsdale, AZ "
-          },
-          {
-            Index: "84.6",
-            GeoFips: "38220",
-            GeoName: "Pine Bluff, AR "
-          },
-          {
-            Index: "94.8",
-            GeoFips: "38300",
-            GeoName: "Pittsburgh, PA "
-          },
-          {
-            Index: "95.4",
-            GeoFips: "38340",
-            GeoName: "Pittsfield, MA "
-          },
-          {
-            Index: "89.7",
-            GeoFips: "38540",
-            GeoName: "Pocatello, ID "
-          },
-          {
-            Index: "100.7",
-            GeoFips: "38860",
-            GeoName: "Portland-South Portland, ME "
-          },
-          {
-            Index: "101.3",
-            GeoFips: "38900",
-            GeoName: "Portland-Vancouver-Hillsboro, OR-WA "
-          },
-          {
-            Index: "95.8",
-            GeoFips: "38940",
-            GeoName: "Port St. Lucie, FL "
-          },
-          {
-            Index: "95.4",
-            GeoFips: "39140",
-            GeoName: "Prescott, AZ "
-          },
-          {
-            Index: "99",
-            GeoFips: "39300",
-            GeoName: "Providence-Warwick, RI-MA "
-          },
-          {
-            Index: "97.3",
-            GeoFips: "39340",
-            GeoName: "Provo-Orem, UT "
-          },
-          {
-            Index: "92.3",
-            GeoFips: "39380",
-            GeoName: "Pueblo, CO "
-          },
-          {
-            Index: "94.8",
-            GeoFips: "39460",
-            GeoName: "Punta Gorda, FL "
-          },
-          {
-            Index: "94",
-            GeoFips: "39540",
-            GeoName: "Racine, WI "
-          },
-          {
-            Index: "95.9",
-            GeoFips: "39580",
-            GeoName: "Raleigh, NC "
-          },
-          {
-            Index: "92.3",
-            GeoFips: "39660",
-            GeoName: "Rapid City, SD "
-          },
-          {
-            Index: "96",
-            GeoFips: "39740",
-            GeoName: "Reading, PA "
-          },
-          {
-            Index: "98.2",
-            GeoFips: "39820",
-            GeoName: "Redding, CA "
-          },
-          {
-            Index: "99.1",
-            GeoFips: "39900",
-            GeoName: "Reno, NV "
-          },
-          {
-            Index: "96.2",
-            GeoFips: "40060",
-            GeoName: "Richmond, VA "
-          },
-          {
-            Index: "105.9",
-            GeoFips: "40140",
-            GeoName: "Riverside-San Bernardino-Ontario, CA "
-          },
-          {
-            Index: "91.4",
-            GeoFips: "40220",
-            GeoName: "Roanoke, VA "
-          },
-          {
-            Index: "93.7",
-            GeoFips: "40340",
-            GeoName: "Rochester, MN "
-          },
-          {
-            Index: "97.4",
-            GeoFips: "40380",
-            GeoName: "Rochester, NY "
-          },
-          {
-            Index: "91.3",
-            GeoFips: "40420",
-            GeoName: "Rockford, IL "
-          },
-          {
-            Index: "86.3",
-            GeoFips: "40580",
-            GeoName: "Rocky Mount, NC "
-          },
-          {
-            Index: "80.7",
-            GeoFips: "40660",
-            GeoName: "Rome, GA "
-          },
-          {
-            Index: "102.5",
-            GeoFips: "40900",
-            GeoName: "Sacramento--Roseville--Arden-Arcade, CA "
-          },
-          {
-            Index: "89.6",
-            GeoFips: "40980",
-            GeoName: "Saginaw, MI "
-          },
-          {
-            Index: "93.5",
-            GeoFips: "41060",
-            GeoName: "St. Cloud, MN "
-          },
-          {
-            Index: "93.8",
-            GeoFips: "41100",
-            GeoName: "St. George, UT "
-          },
-          {
-            Index: "88.9",
-            GeoFips: "41140",
-            GeoName: "St. Joseph, MO-KS "
-          },
-          {
-            Index: "90.5",
-            GeoFips: "41180",
-            GeoName: "St. Louis, MO-IL "
-          },
-          {
-            Index: "95.4",
-            GeoFips: "41420",
-            GeoName: "Salem, OR "
-          },
-          {
-            Index: "107.9",
-            GeoFips: "41500",
-            GeoName: "Salinas, CA "
-          },
-          {
-            Index: "89.7",
-            GeoFips: "41540",
-            GeoName: "Salisbury, MD-DE "
-          },
-          {
-            Index: "99.7",
-            GeoFips: "41620",
-            GeoName: "Salt Lake City, UT "
-          },
-          {
-            Index: "93.5",
-            GeoFips: "41660",
-            GeoName: "San Angelo, TX "
-          },
-          {
-            Index: "94.4",
-            GeoFips: "41700",
-            GeoName: "San Antonio-New Braunfels, TX "
-          },
-          {
-            Index: "115.9",
-            GeoFips: "41740",
-            GeoName: "San Diego-Carlsbad, CA "
-          },
-          {
-            Index: "121.3",
-            GeoFips: "41860",
-            GeoName: "San Francisco-Oakland-Hayward, CA "
-          },
-          {
-            Index: "122.9",
-            GeoFips: "41940",
-            GeoName: "San Jose-Sunnyvale-Santa Clara, CA "
-          },
-          {
-            Index: "107",
-            GeoFips: "42020",
-            GeoName: "San Luis Obispo-Paso Robles-Arroyo Grande, CA "
-          },
-          {
-            Index: "121.8",
-            GeoFips: "42100",
-            GeoName: "Santa Cruz-Watsonville, CA "
-          },
-          {
-            Index: "99.7",
-            GeoFips: "42140",
-            GeoName: "Santa Fe, NM "
-          },
-          {
-            Index: "108.8",
-            GeoFips: "42200",
-            GeoName: "Santa Maria-Santa Barbara, CA "
-          },
-          {
-            Index: "118.3",
-            GeoFips: "42220",
-            GeoName: "Santa Rosa, CA "
-          },
-          {
-            Index: "94.3",
-            GeoFips: "42340",
-            GeoName: "Savannah, GA "
-          },
-          {
-            Index: "91.8",
-            GeoFips: "42540",
-            GeoName: "Scranton--Wilkes-Barre--Hazleton, PA "
-          },
-          {
-            Index: "107.8",
-            GeoFips: "42660",
-            GeoName: "Seattle-Tacoma-Bellevue, WA "
-          },
-          {
-            Index: "90.9",
-            GeoFips: "42680",
-            GeoName: "Sebastian-Vero Beach, FL "
-          },
-          {
-            Index: "84.9",
-            GeoFips: "42700",
-            GeoName: "Sebring, FL "
-          },
-          {
-            Index: "91.7",
-            GeoFips: "43100",
-            GeoName: "Sheboygan, WI "
-          },
-          {
-            Index: "91.3",
-            GeoFips: "43300",
-            GeoName: "Sherman-Denison, TX "
-          },
-          {
-            Index: "90.9",
-            GeoFips: "43340",
-            GeoName: "Shreveport-Bossier City, LA "
-          },
-          {
-            Index: "90.7",
-            GeoFips: "43420",
-            GeoName: "Sierra Vista-Douglas, AZ "
-          },
-          {
-            Index: "89",
-            GeoFips: "43580",
-            GeoName: "Sioux City, IA-NE-SD "
-          },
-          {
-            Index: "92.8",
-            GeoFips: "43620",
-            GeoName: "Sioux Falls, SD "
-          },
-          {
-            Index: "90.2",
-            GeoFips: "43780",
-            GeoName: "South Bend-Mishawaka, IN-MI "
-          },
-          {
-            Index: "87.8",
-            GeoFips: "43900",
-            GeoName: "Spartanburg, SC "
-          },
-          {
-            Index: "95.6",
-            GeoFips: "44060",
-            GeoName: "Spokane-Spokane Valley, WA "
-          },
-          {
-            Index: "92.3",
-            GeoFips: "44100",
-            GeoName: "Springfield, IL "
-          },
-          {
-            Index: "96.8",
-            GeoFips: "44140",
-            GeoName: "Springfield, MA "
-          },
-          {
-            Index: "88.5",
-            GeoFips: "44180",
-            GeoName: "Springfield, MO "
-          },
-          {
-            Index: "88.5",
-            GeoFips: "44220",
-            GeoName: "Springfield, OH "
-          },
-          {
-            Index: "102.4",
-            GeoFips: "44300",
-            GeoName: "State College, PA "
-          },
-          {
-            Index: "88.8",
-            GeoFips: "44420",
-            GeoName: "Staunton-Waynesboro, VA "
-          },
-          {
-            Index: "100.4",
-            GeoFips: "44700",
-            GeoName: "Stockton-Lodi, CA "
-          },
-          {
-            Index: "87.6",
-            GeoFips: "44940",
-            GeoName: "Sumter, SC "
-          },
-          {
-            Index: "95.5",
-            GeoFips: "45060",
-            GeoName: "Syracuse, NY "
-          },
-          {
-            Index: "94.3",
-            GeoFips: "45220",
-            GeoName: "Tallahassee, FL "
-          },
-          {
-            Index: "100.1",
-            GeoFips: "45300",
-            GeoName: "Tampa-St. Petersburg-Clearwater, FL "
-          },
-          {
-            Index: "87.9",
-            GeoFips: "45460",
-            GeoName: "Terre Haute, IN "
-          },
-          {
-            Index: "87.6",
-            GeoFips: "45500",
-            GeoName: "Texarkana, TX-AR "
-          },
-          {
-            Index: "90.2",
-            GeoFips: "45540",
-            GeoName: "The Villages, FL "
-          },
-          {
-            Index: "89.6",
-            GeoFips: "45780",
-            GeoName: "Toledo, OH "
-          },
-          {
-            Index: "89.8",
-            GeoFips: "45820",
-            GeoName: "Topeka, KS "
-          },
-          {
-            Index: "112.5",
-            GeoFips: "45940",
-            GeoName: "Trenton, NJ "
-          },
-          {
-            Index: "97.1",
-            GeoFips: "46060",
-            GeoName: "Tucson, AZ "
-          },
-          {
-            Index: "91.3",
-            GeoFips: "46140",
-            GeoName: "Tulsa, OK "
-          },
-          {
-            Index: "88.3",
-            GeoFips: "46220",
-            GeoName: "Tuscaloosa, AL "
-          },
-          {
-            Index: "94",
-            GeoFips: "46340",
-            GeoName: "Tyler, TX "
-          },
-          {
-            Index: "123.5",
-            GeoFips: "46520",
-            GeoName: "Urban Honolulu, HI "
-          },
-          {
-            Index: "93",
-            GeoFips: "46540",
-            GeoName: "Utica-Rome, NY "
-          },
-          {
-            Index: "82.2",
-            GeoFips: "46660",
-            GeoName: "Valdosta, GA "
-          },
-          {
-            Index: "115.4",
-            GeoFips: "46700",
-            GeoName: "Vallejo-Fairfield, CA "
-          },
-          {
-            Index: "93.7",
-            GeoFips: "47020",
-            GeoName: "Victoria, TX "
-          },
-          {
-            Index: "102.2",
-            GeoFips: "47220",
-            GeoName: "Vineland-Bridgeton, NJ "
-          },
-          {
-            Index: "98.4",
-            GeoFips: "47260",
-            GeoName: "Virginia Beach-Norfolk-Newport News, VA-NC "
-          },
-          {
-            Index: "95.4",
-            GeoFips: "47300",
-            GeoName: "Visalia-Porterville, CA "
-          },
-          {
-            Index: "91.5",
-            GeoFips: "47380",
-            GeoName: "Waco, TX "
-          },
-          {
-            Index: "92.6",
-            GeoFips: "47460",
-            GeoName: "Walla Walla, WA "
-          },
-          {
-            Index: "89.9",
-            GeoFips: "47580",
-            GeoName: "Warner Robins, GA "
-          },
-          {
-            Index: "119.4",
-            GeoFips: "47900",
-            GeoName: "Washington-Arlington-Alexandria, DC-VA-MD-WV "
-          },
-          {
-            Index: "91.2",
-            GeoFips: "47940",
-            GeoName: "Waterloo-Cedar Falls, IA "
-          },
-          {
-            Index: "98.1",
-            GeoFips: "48060",
-            GeoName: "Watertown-Fort Drum, NY "
-          },
-          {
-            Index: "91.8",
-            GeoFips: "48140",
-            GeoName: "Wausau, WI "
-          },
-          {
-            Index: "87.1",
-            GeoFips: "48260",
-            GeoName: "Weirton-Steubenville, WV-OH "
-          },
-          {
-            Index: "95",
-            GeoFips: "48300",
-            GeoName: "Wenatchee, WA "
-          },
-          {
-            Index: "86.7",
-            GeoFips: "48540",
-            GeoName: "Wheeling, WV-OH "
-          },
-          {
-            Index: "91",
-            GeoFips: "48620",
-            GeoName: "Wichita, KS "
-          },
-          {
-            Index: "90.9",
-            GeoFips: "48660",
-            GeoName: "Wichita Falls, TX "
-          },
-          {
-            Index: "93.6",
-            GeoFips: "48700",
-            GeoName: "Williamsport, PA "
-          },
-          {
-            Index: "94.9",
-            GeoFips: "48900",
-            GeoName: "Wilmington, NC "
-          },
-          {
-            Index: "91.3",
-            GeoFips: "49020",
-            GeoName: "Winchester, VA-WV "
-          },
-          {
-            Index: "90",
-            GeoFips: "49180",
-            GeoName: "Winston-Salem, NC "
-          },
-          {
-            Index: "103.9",
-            GeoFips: "49340",
-            GeoName: "Worcester, MA-CT "
-          },
-          {
-            Index: "95",
-            GeoFips: "49420",
-            GeoName: "Yakima, WA "
-          },
-          {
-            Index: "96.1",
-            GeoFips: "49620",
-            GeoName: "York-Hanover, PA "
-          },
-          {
-            Index: "88.8",
-            GeoFips: "49660",
-            GeoName: "Youngstown-Warren-Boardman, OH-PA "
-          },
-          {
-            Index: "98.5",
-            GeoFips: "49700",
-            GeoName: "Yuba City, CA "
-          },
-          {
-            Index: "93.3",
-            GeoFips: "49740",
-            GeoName: "Yuma, AZ "
-          },
-          {
-            Index: "",
-            GeoFips: "Legend / Footnotes:",
-            GeoName: ""
-          },
-          {
-            Index: "",
-            GeoFips: "1/ Regional Price Parities are not available for the Enid, OK, Metropolitan Statistical Area. These will be published with the release of 2015 data on June 22, 2017.",
-            GeoName: ""
-          },
-          {
-            Index: "",
-            GeoFips: "The 2008-14 Regional Price Parities were estimated using statistical area delineations published by the Office of Management and Budget in February 2013.",
-            GeoName: ""
-          },
-          {
-            Index: "",
-            GeoFips: "(NA) Data not available for this year.",
-            GeoName: ""
-          },
-          {
-            Index: "",
-            GeoFips: "Last updated: July 7, 2+016-- new estimates for 2014; revised estimates for 2012-2013.",
-            GeoName: ""
-          }
-        ];
+       var rpps = [{cityName: "Abilene, TX", indexScore: 91.7},
+                  {cityName: "Akron, OH", indexScore: 88.8},
+                  {cityName: "Albany, GA", indexScore: 84},
+                  {cityName: "Albany, OR", indexScore: 94},
+                  {cityName: "Albany, NY", indexScore: 99.2},
+                  {cityName: "Schenectady, NY", indexScore: 99.2},
+                  {cityName: "Troy, NY", indexScore: 99.2},
+                  {cityName: "Albuquerque, NM", indexScore: 97.2},
+                  {cityName: "Alexandria, LA", indexScore: 89},
+                  {cityName: "Allentown, PA", indexScore: 100.3},
+                  {cityName: "Bethlehem, PA", indexScore: 100.3},
+                  {cityName: "Easton, PA", indexScore: 100.3},
+                  {cityName: "Altoona, PA", indexScore: 90},
+                  {cityName: "Amarillo, TX", indexScore: 93.1},
+                  {cityName: "Ames, IA", indexScore: 90.2},
+                  {cityName: "Anchorage, AK", indexScore: 109.6},
+                  {cityName: "Ann Arbor, MI", indexScore: 102},
+                  {cityName: "Anniston, AL", indexScore: 84.6},
+                  {cityName: "Oxford, AL", indexScore: 84.6},
+                  {cityName: "Jacksonville, AL", indexScore: 84.6},
+                  {cityName: "Appleton, WI", indexScore: 92.7},
+                  {cityName: "Asheville, NC", indexScore: 93.2},
+                  {cityName: "Athens, GA", indexScore: 92},
+                  {cityName: "Atlanta, GA", indexScore: 95.6},
+                  {cityName: "Sandy Springs, GA", indexScore: 95.6},
+                  {cityName: "Roswell, GA", indexScore: 95.6},
+                  {cityName: "Atlantic City, NJ", indexScore: 107},
+                  {cityName: "Hammonton, NJ", indexScore: 107},
+                  {cityName: "Auburn, AL", indexScore: 85.8},
+                  {cityName: "Opelika, AL", indexScore: 85.8},
+                  {cityName: "Augusta, GA", indexScore: 89.3},
+                  {cityName: "Augusta, SC", indexScore: 89.3},
+                  {cityName: "Austin, TX", indexScore: 99},
+                  {cityName: "Round Rock, TX", indexScore: 99},
+                  {cityName: "Bakersfield, CA", indexScore: 97.8},
+                  {cityName: "Baltimore, MD", indexScore: 108},
+                  {cityName: "Columbia, MD", indexScore: 108},
+                  {cityName: "Towson, MD", indexScore: 108},
+                  {cityName: "Bangor, ME", indexScore: 95.9},
+                  {cityName: "Barnstable Town, MA", indexScore: 101.9},
+                  {cityName: "Baton Rouge, LA", indexScore: 93.3},
+                  {cityName: "Battle Creek, MI", indexScore: 91.6},
+                  {cityName: "Bay City, MI", indexScore: 90.2},
+                  {cityName: "Beaumont, TX", indexScore: 90.3},
+                  {cityName: "Port Arthur, TX", indexScore: 90.3},
+                  {cityName: "Beckley, WV", indexScore: 79.7},
+                  {cityName: "Bellingham, WA", indexScore: 100.1},
+                  {cityName: "Bend, OR", indexScore: 95.8},
+                  {cityName: "Redmond, OR", indexScore: 95.8},
+                  {cityName: "Billings, MT", indexScore: 97.7},
+                  {cityName: "Binghamton, NY", indexScore: 95},
+                  {cityName: "Birmingham, AL", indexScore: 89.9},
+                  {cityName: "Hoover, AL", indexScore: 89.9},
+                  {cityName: "Bismarck, ND", indexScore: 94},
+                  {cityName: "Blacksburg, VA", indexScore: 88.2},
+                  {cityName: "Christiansburg, VA", indexScore: 88.2},
+                  {cityName: "Radford, VA", indexScore: 88.2},
+                  {cityName: "Bloomington, IL", indexScore: 94.1},
+                  {cityName: "Bloomington, IN", indexScore: 94.9},
+                  {cityName: "Bloomsburg, PA", indexScore: 93},
+                  {cityName: "Berwick, PA", indexScore: 93},
+                  {cityName: "Boise City, ID", indexScore: 95.1},
+                  {cityName: "Boston, MA", indexScore: 110.3},
+                  {cityName: "Cambridge, MA", indexScore: 110.3},
+                  {cityName: "Newton, MA", indexScore: 110.3},
+                  {cityName: "Newton, NH", indexScore: 110.3},
+                  {cityName: "Boulder, CO", indexScore: 109.1},
+                  {cityName: "Bowling Green, KY", indexScore: 85.8},
+                  {cityName: "Bremerton, WA", indexScore: 105},
+                  {cityName: "Silverdale, WA", indexScore: 105},
+                  {cityName: "Bridgeport, CT", indexScore: 120.4},
+                  {cityName: "Stamford, CT", indexScore: 120.4},
+                  {cityName: "Norwalk, CT", indexScore: 120.4},
+                  {cityName: "Brownsville, TX", indexScore: 85},
+                  {cityName: "Harlingen, TX", indexScore: 85},
+                  {cityName: "Brunswick, GA", indexScore: 86},
+                  {cityName: "Buffalo, NY", indexScore: 93.8},
+                  {cityName: "Cheektowaga, NY", indexScore: 93.8},
+                  {cityName: "Niagara Falls, NY", indexScore: 93.8},
+                  {cityName: "Burlington, NC", indexScore: 90.5},
+                  {cityName: "Burlington, VT", indexScore: 102.7},
+                  {cityName: "South Burlington, VT", indexScore: 102.7},
+                  {cityName: "California, MD", indexScore: 98.2},
+                  {cityName: "Lexington Park, MD", indexScore: 98.2},
+                  {cityName: "Canton, OH", indexScore: 89.3},
+                  {cityName: "Massillon, OH", indexScore: 89.3},
+                  {cityName: "Cape Coral, FL", indexScore: 95.1},
+                  {cityName: "Fort Myers, FL", indexScore: 95.1},
+                  {cityName: "Cape Girardeau, MO", indexScore: 83.5},
+                  {cityName: "Cape Girardeau, IL", indexScore: 83.5},
+                  {cityName: "Carbondale, IL", indexScore: 84},
+                  {cityName: "Marion, IL", indexScore: 84},
+                  {cityName: "Carson City, NV", indexScore: 95.9},
+                  {cityName: "Casper, WY", indexScore: 97.9},
+                  {cityName: "Cedar Rapids, IA", indexScore: 90.6},
+                  {cityName: "Chambersburg, PA", indexScore: 94.1},
+                  {cityName: "Waynesboro, PA", indexScore: 94.1},
+                  {cityName: "Champaign, IL", indexScore: 93.4},
+                  {cityName: "Urbana, IL", indexScore: 93.4},
+                  {cityName: "Charleston, WV", indexScore: 89},
+                  {cityName: "Charleston, SC", indexScore: 96.3},
+                  {cityName: "North Charleston, SC", indexScore: 96.3},
+                  {cityName: "Charlotte, NC", indexScore: 93.6},
+                  {cityName: "Concord, NC", indexScore: 93.6},
+                  {cityName: "Gastonia, NC", indexScore: 93.6},
+                  {cityName: "Gastonia, SC", indexScore: 93.6},
+                  {cityName: "Charlottesville, VA", indexScore: 97.8},
+                  {cityName: "Chattanooga, TN", indexScore: 90.6},
+                  {cityName: "Chattanooga, GA", indexScore: 90.6},
+                  {cityName: "Cheyenne, WY", indexScore: 97.6},
+                  {cityName: "Chicago, IL", indexScore: 106},
+                  {cityName: "Naperville, IL", indexScore: 106},
+                  {cityName: "Elgin, IL", indexScore: 106},
+                  {cityName: "Chico, CA", indexScore: 100},
+                  {cityName: "Cincinnati, OH", indexScore: 89.8},
+                  {cityName: "Cincinnati, KY", indexScore: 89.8},
+                  {cityName: "Cincinnati, IN", indexScore: 89.8},
+                  {cityName: "Clarksville, TN", indexScore:91.3},
+                  {cityName: "Clarksville, KY", indexScore: 91.3},
+                  {cityName: "Cleveland, TN", indexScore: 84.1},
+                  {cityName: "Cleveland, OH", indexScore: 89.1},
+                  {cityName: "Elyria, OH", indexScore: 89.1},
+                  {cityName: "Coeur d'Alene, ID", indexScore: 92.9},
+                  {cityName: "College Station, TX", indexScore: 93.9},
+                  {cityName: "Bryan, TX", indexScore: 93.9},
+                  {cityName: "Colorado Springs, CO", indexScore: 99.7},
+                  {cityName: "Columbia, MO", indexScore: 93},
+                  {cityName: "Columbia, SC", indexScore: 91.9},
+                  {cityName: "Columbus, GA", indexScore: 89.5},
+                  {cityName: "Columbus, AL", indexScore: 89.5},
+                  {cityName: "Columbus, IN", indexScore: 87.7},
+                  {cityName: "Columbus, OH", indexScore: 93.4},
+                  {cityName: "Corpus Christi, TX", indexScore: 93.5},
+                  {cityName: "Corvallis, OR", indexScore: 98.6},
+                  {cityName: "Crestview, FL", indexScore: 95.3},
+                  {cityName: "Fort Walton Beach, FL", indexScore: 95.3},
+                  {cityName: "Destin, FL", indexScore: 95.3},
+                  {cityName: "Cumberland, MD", indexScore: 88.4},
+                  {cityName: "Cumberland, WV", indexScore: 88.4},
+                  {cityName: "Dallas, TX", indexScore: 100.4},
+                  {cityName: "Fort Worth, TX", indexScore: 100.4},
+                  {cityName: "Arlington, TX", indexScore: 100.4},
+                  {cityName: "Dalton, GA", indexScore: 83.9},
+                  {cityName: "Danville, IL", indexScore: 81.1},
+                  {cityName: "Daphne, AL", indexScore: 92.3},
+                  {cityName: "Fairhope, AL", indexScore: 92.3},
+                  {cityName: "Foley, AL", indexScore: 92.3},
+                  {cityName: "Davenport, IA", indexScore: 91.4},
+                  {cityName: "Moline, IL", indexScore: 91.4},
+                  {cityName: "Rock Island, IL", indexScore: 91.4},
+                  {cityName: "Dayton, OH", indexScore: 90.9},
+                  {cityName: "Decatur, AL", indexScore: 87.1},
+                  {cityName: "Decatur, IL", indexScore: 89},
+                  {cityName: "Deltona, FL", indexScore: 95.7},
+                  {cityName: "Daytona Beach, FL", indexScore: 95.7},
+                  {cityName: "Ormond Beach, FL", indexScore: 95.7},
+                  {cityName: "Denver, CO", indexScore: 104.7},
+                  {cityName: "Aurora, CO", indexScore: 104.7},
+                  {cityName: "Lakewood, CO", indexScore: 104.7},
+                  {cityName: "Des Moines, IA", indexScore: 94.9},
+                  {cityName: "West Des Moines, IA", indexScore: 94.9},
+                  {cityName: "Detroit, MI", indexScore: 97.3},
+                  {cityName: "Warren, MI", indexScore: 97.3},
+                  {cityName: "Dearborn, MI", indexScore: 97.3},
+                  {cityName: "Dothan, AL", indexScore: 85.4},
+                  {cityName: "Dover, DE", indexScore: 94.2},
+                  {cityName: "Dubuque, IA", indexScore: 92.9},
+                  {cityName: "Duluth, MN", indexScore: 91.7},
+                  {cityName: "Durham, NC", indexScore: 95.4},
+                  {cityName: "Chapel Hill, NC", indexScore: 95.4},
+                  {cityName: "East Stroudsburg, PA", indexScore: 98.8},
+                  {cityName: "Eau Claire, WI", indexScore: 92.1},
+                  {cityName: "El Centro, CA", indexScore: 90.4},
+                  {cityName: "Elizabethtown, KY", indexScore: 86},
+                  {cityName: "Fort Knox, KY", indexScore: 86},
+                  {cityName: "Elkhart, IN", indexScore: 91},
+                  {cityName: "Goshen, IN", indexScore: 91},
+                  {cityName: "Elmira, NY", indexScore: 94.5},
+                  {cityName: "El Paso, TX", indexScore: 90.2},
+                  {cityName: "Erie, PA", indexScore: 92.5},
+                  {cityName: "Eugene, OR", indexScore: 98.2},
+                  {cityName: "Evansville, IN", indexScore: 90.8},
+                  {cityName: "Evansville, KY", indexScore: 90.8},
+                  {cityName: "Fairbanks, AK", indexScore: 105.8},
+                  {cityName: "Fargo, ND", indexScore: 93.5},
+                  {cityName: "Moorhead, MN", indexScore: 93.5},
+                  {cityName: "Farmington, NM", indexScore: 91.1},
+                  {cityName: "Fayetteville, NC", indexScore: 91.5},
+                  {cityName: "Fayetteville, AR", indexScore: 90.1},
+                  {cityName: "Springdale, MO", indexScore: 90.1},
+                  {cityName: "Rogers, AR", indexScore: 90.1},
+                  {cityName: "Flagstaff, AZ", indexScore: 97.9},
+                  {cityName: "Flint, MI", indexScore: 92.8},
+                  {cityName: "Florence, SC", indexScore: 86},
+                  {cityName: "Florence, AL", indexScore: 84.4},
+                  {cityName: "Muscle Shoals, AL", indexScore: 84.4},
+                  {cityName: "Fond du Lac, WI", indexScore: 87.3},
+                  {cityName: "Fort Collins, CO", indexScore: 101.4},
+                  {cityName: "Fort Smith, AR", indexScore: 86.2},
+                  {cityName: "Fort Smith, OK", indexScore: 86.2},
+                  {cityName: "Fort Wayne, IN", indexScore: 90.7},
+                  {cityName: "Fresno, CA", indexScore: 97.3},
+                  {cityName: "Gadsden, AL", indexScore: 84.9},
+                  {cityName: "Gainesville, FL", indexScore: 95.2},
+                  {cityName: "Gainesville, GA", indexScore: 89},
+                  {cityName: "Gettysburg, PA", indexScore: 95.6},
+                  {cityName: "Glens Falls, NY", indexScore: 96.8},
+                  {cityName: "Goldsboro, NC", indexScore: 88.1},
+                  {cityName: "Grand Forks, ND", indexScore: 93.8},
+                  {cityName: "Grand Forks, MN", indexScore: 93.8},
+                  {cityName: "Grand Island, NE", indexScore: 85.3},
+                  {cityName: "Grand Junction, CO", indexScore: 94.4},
+                  {cityName: "Grand Rapids, MI", indexScore: 93.7},
+                  {cityName: "Wyoming, MI", indexScore: 93.7},
+                  {cityName: "Grants Pass, OR", indexScore: 93.7},
+                  {cityName: "Great Falls, MT", indexScore: 93.8},
+                  {cityName: "Greeley, CO", indexScore: 98.9},
+                  {cityName: "Green Bay, WI", indexScore: 92},
+                  {cityName: "Greensboro, NC", indexScore: 90.3},
+                  {cityName: "High Point, NC", indexScore: 90.3},
+                  {cityName: "Greenville, NC", indexScore: 88.9},
+                  {cityName: "Greenville, SC", indexScore: 90.2},
+                  {cityName: "Anderson, SC", indexScore: 90.2},
+                  {cityName: "Mauldin, SC", indexScore: 90.2},
+                  {cityName: "Gulfport, MS", indexScore: 90.2},
+                  {cityName: "Biloxi, MS", indexScore: 90.2},
+                  {cityName: "Pascagoula, MS", indexScore: 90.2},
+                  {cityName: "Hagerstown, MD", indexScore: 101.9},
+                  {cityName: "Martinsburg, WV", indexScore: 101.9},
+                  {cityName: "Hammond, LA", indexScore: 85.3},
+                  {cityName: "Hanford, CA", indexScore: 92.8},
+                  {cityName: "Corcoran, CA", indexScore: 92.8},
+                  {cityName: "Harrisburg, PA", indexScore: 96},
+                  {cityName: "Carlisle, PA", indexScore: 96},
+                  {cityName: "Harrisonburg, VA", indexScore: 91.4},
+                  {cityName: "Hartford, CT", indexScore: 100.7},
+                  {cityName: "West Hartford, CT", indexScore: 100.7},
+                  {cityName: "East Hartford, CT", indexScore: 100.7},
+                  {cityName: "Hattiesburg, MS", indexScore: 84.2},
+                  {cityName: "Hickory, NC", indexScore: 88.5},
+                  {cityName: "Lenoir, NC", indexScore: 88.5},
+                  {cityName: "Morganton, NC", indexScore: 88.5},
+                  {cityName: "Hilton Head Island, SC", indexScore: 93.9},
+                  {cityName: "Bluffton, SC", indexScore: 93.9},
+                  {cityName: "Beaufort, SC", indexScore: 93.9},
+                  {cityName: "Hinesville, GA", indexScore: 91.5},
+                  {cityName: "Homosassa Springs, FL", indexScore: 88.5},
+                  {cityName: "Hot Springs, AR", indexScore: 85.2},
+                  {cityName: "Houma, LA", indexScore: 93},
+                  {cityName: "Thibodaux, LA", indexScore: 93},
+                  {cityName: "Houston, TX", indexScore: 100.3},
+                  {cityName: "The Woodlands, TX", indexScore: 100.3},
+                  {cityName: "Sugar Land, TX", indexScore: 100.3},
+                  {cityName: "Huntington, WV", indexScore: 86.8},
+                  {cityName: "Ashland, KY", indexScore: 86.8},
+                  {cityName: "Ironton, OH", indexScore: 86.8},
+                  {cityName: "Huntsville, AL", indexScore: 90.7},
+                  {cityName: "Idaho Falls, ID", indexScore: 88.8},
+                  {cityName: "Indianapolis, IN", indexScore: 93.4},
+                  {cityName: "Carmel, IN", indexScore: 93.4},
+                  {cityName: "Anderson, IN", indexScore: 93.4},
+                  {cityName: "Iowa City, IA", indexScore: 96.3},
+                  {cityName: "Ithaca, NY", indexScore: 104.6},
+                  {cityName: "Jackson, MI", indexScore: 90.6},
+                  {cityName: "Jackson, MS", indexScore: 90.6},
+                  {cityName: "Jackson, TN", indexScore: 83.1},
+                  {cityName: "Jacksonville, FL", indexScore: 96},
+                  {cityName: "Jacksonville, NC", indexScore: 94.2},
+                  {cityName: "Janesville, WI", indexScore: 92.5},
+                  {cityName: "Beloit, WI", indexScore: 92.5},
+                  {cityName: "Jefferson City, MO", indexScore: 82.2},
+                  {cityName: "Johnson City, TN", indexScore: 88.6},
+                  {cityName: "Johnstown, PA", indexScore: 85.5},
+                  {cityName: "Jonesboro, AR", indexScore: 82},
+                  {cityName: "Joplin, MO", indexScore: 88.1},
+                  {cityName: "Kahului, HI", indexScore: 106.2},
+                  {cityName: "Wailuku, HI", indexScore: 106.2},
+                  {cityName: "Lahaina, HI", indexScore: 106.2},
+                  {cityName: "Kalamazoo, MI", indexScore: 92.5},
+                  {cityName: "Portage, MI", indexScore: 92.5},
+                  {cityName: "Kankakee, IL", indexScore: 99},
+                  {cityName: "Kansas City, MO", indexScore: 93.4},
+                  {cityName: "Kansas City, KS", indexScore: 93.4},
+                  {cityName: "Kennewick, WA", indexScore: 98.1},
+                  {cityName: "Richland, WA", indexScore: 98.1},
+                  {cityName: "Killeen, TX", indexScore: 92.6},
+                  {cityName: "Temple, TX", indexScore: 92.6},
+                  {cityName: "Kingsport-Bristol, TN", indexScore: 86.5},
+                  {cityName: "Bristol, VA", indexScore: 86.5},
+                  {cityName: "Kingston, NY", indexScore: 103.1},
+                  {cityName: "Knoxville, TN", indexScore: 90.5},
+                  {cityName: "Kokomo, IN", indexScore: 87.2},
+                  {cityName: "La Crosse, WI", indexScore: 93.3},
+                  {cityName: "Onalaska, WI", indexScore: 93.3},
+                  {cityName: "Lafayette, LA", indexScore: 89.1},
+                  {cityName: "Lafayette, IN", indexScore: 93.9},
+                  {cityName: "West Lafayette, IN", indexScore: 93.9},
+                  {cityName: "Lake Charles, LA", indexScore: 89.3},
+                  {cityName: "Lake Havasu City, AZ", indexScore: 93.6},
+                  {cityName: "Kingman, AZ", indexScore: 93.6},
+                  {cityName: "Lakeland, FL", indexScore: 93.3},
+                  {cityName: "Winter Haven, FL", indexScore: 93.3},
+                  {cityName: "Lancaster, PA", indexScore: 98.4},
+                  {cityName: "Lansing, MI", indexScore: 93.9},
+                  {cityName: "East Lansing, MI", indexScore: 93.9},
+                  {cityName: "Laredo, TX", indexScore: 88.7},
+                  {cityName: "Las Cruces, NM", indexScore: 92.9},
+                  {cityName: "Las Vegas, NV", indexScore: 98.7},
+                  {cityName: "Henderson, NV", indexScore: 98.7},
+                  {cityName: "Paradise, NV", indexScore: 98.7},
+                  {cityName: "Lawrence, KS", indexScore: 94.3},
+                  {cityName: "Lawton, OK", indexScore: 91.1},
+                  {cityName: "Lebanon, PA", indexScore: 94.9},
+                  {cityName: "Lewiston, ID", indexScore: 89.9},
+                  {cityName: "Lewiston, ME", indexScore: 94.7},
+                  {cityName: "Auburn, ME", indexScore: 94.7},
+                  {cityName: "Lexington, KY", indexScore: 92.4},
+                  {cityName: "Fayette, KY", indexScore: 92.4},
+                  {cityName: "Lima, OH", indexScore: 89.6},
+                  {cityName: "Lincoln, NE", indexScore: 92.9},
+                  {cityName: "Little Rock, AR", indexScore: 90.7},
+                  {cityName: "North Little Rock, AR", indexScore: 90.7},
+                  {cityName: "Conway, AR", indexScore: 90.7},
+                  {cityName: "Logan, UT", indexScore: 90},
+                  {cityName: "Longview, TX", indexScore: 91.8},
+                  {cityName: "Longview, WA", indexScore: 93.5},
+                  {cityName: "Los Angeles, CA", indexScore: 117},
+                  {cityName: "Long Beach, CA", indexScore: 117},
+                  {cityName: "Anaheim, CA", indexScore: 117},
+                  {cityName: "Louisville, KY", indexScore: 91.4},
+                  {cityName: "Lubbock, TX", indexScore: 93.5},
+                  {cityName: "Lynchburg, VA", indexScore: 90.7},
+                  {cityName: "Macon, GA", indexScore: 87.5},
+                  {cityName: "Madera, CA", indexScore: 96.8},
+                  {cityName: "Madison, WI", indexScore: 97.8},
+                  {cityName: "Manchester, NH", indexScore: 108.2},
+                  {cityName: "Nashua, NH", indexScore: 108.2},
+                  {cityName: "Manhattan, KS", indexScore: 92.9},
+                  {cityName: "Mankato, MN", indexScore: 89.3},
+                  {cityName: "North Mankato, MN", indexScore: 89.3},
+                  {cityName: "Mansfield, OH", indexScore: 87.1},
+                  {cityName: "McAllen, TX", indexScore: 85.7},
+                  {cityName: "Edinburg, TX", indexScore: 85.7},
+                  {cityName: "Mission, TX", indexScore: 85.7},
+                  {cityName: "Medford, OR", indexScore: 98.2},
+                  {cityName: "Memphis, TN", indexScore: 91.9},
+                  {cityName: "Merced, CA", indexScore: 95.5},
+                  {cityName: "Miami, FL", indexScore: 105.9},
+                  {cityName: "Fort Lauderdale, FL", indexScore: 105.9},
+                  {cityName: "West Palm Beach, FL", indexScore: 105.9},
+                  {cityName: "Michigan City, IN", indexScore: 85.9},
+                  {cityName: "La Porte, IN", indexScore: 85.9},
+                  {cityName: "Midland, MI", indexScore: 92.4},
+                  {cityName: "Midland, TX", indexScore: 99.3},
+                  {cityName: "Milwaukee, WI", indexScore: 95.9},
+                  {cityName: "Waukesha, WI", indexScore: 95.9},
+                  {cityName: "West Allis, WI", indexScore: 95.9},
+                  {cityName: "Minneapolis, MN", indexScore: 102.6},
+                  {cityName: "St. Paul, MN", indexScore: 102.6},
+                  {cityName: "Bloomington, MN", indexScore: 102.6},
+                  {cityName: "Missoula, MT", indexScore: 95.8},
+                  {cityName: "Mobile, AL", indexScore: 88.6},
+                  {cityName: "Modesto, CA", indexScore: 98.7},
+                  {cityName: "Monroe, LA", indexScore: 86.3},
+                  {cityName: "Monroe, MI", indexScore: 95.4},
+                  {cityName: "Montgomery, AL", indexScore: 89.7},
+                  {cityName: "Morgantown, WV", indexScore: 88.5},
+                  {cityName: "Morristown, TN", indexScore: 81.9},
+                  {cityName: "Mount Vernon, WA", indexScore: 97.3},
+                  {cityName: "Anacortes, WA", indexScore: 97.3},
+                  {cityName: "Muncie, IN", indexScore: 89.6},
+                  {cityName: "Muskegon, MI", indexScore: 88.7},
+                  {cityName: "Myrtle Beach, SC", indexScore: 91.1},
+                  {cityName: "Conway, SC", indexScore: 91.1},
+                  {cityName: "North Myrtle Beach, SC", indexScore: 91.1},
+                  {cityName: "Napa, CA", indexScore: 118.9},
+                  {cityName: "Naples, FL", indexScore: 99.6},
+                  {cityName: "Immokalee, FL", indexScore: 99.6},
+                  {cityName: "Marco Island, FL", indexScore: 99.6},
+                  {cityName: "Nashville, TN", indexScore: 93.9},
+                  {cityName: "Davidson, TN", indexScore: 93.9},
+                  {cityName: "Murfreesboro, TN", indexScore: 93.9},
+                  {cityName: "Franklin, TN", indexScore: 93.9},
+                  {cityName: "New Bern, NC", indexScore: 87.1},
+                  {cityName: "New Haven, CT", indexScore: 112.9},
+                  {cityName: "Milford, CT", indexScore: 112.9},
+                  {cityName: "New Orleans, LA", indexScore: 96},
+                  {cityName: "Metairie, LA", indexScore: 96},
+                  {cityName: "New York, NY", indexScore: 122.3},
+                  {cityName: "Newark, NJ", indexScore: 122.3},
+                  {cityName: "Jersey City, NJ", indexScore: 122.3},
+                  {cityName: "Niles, MI", indexScore: 89.2},
+                  {cityName: "Benton Harbor, MI", indexScore: 89.2},
+                  {cityName: "North Port, FL", indexScore: 98.7},
+                  {cityName: "Sarasota, FL", indexScore: 98.7},
+                  {cityName: "Bradenton, FL", indexScore: 98.7},
+                  {cityName: "Norwich, CT", indexScore: 100.5},
+                  {cityName: "New London, CT", indexScore: 100.5},
+                  {cityName: "Ocala, FL", indexScore: 90.8},
+                  {cityName: "Ocean City, NJ", indexScore: 107.2},
+                  {cityName: "Odessa, TX", indexScore: 96.6},
+                  {cityName: "Ogden, UT", indexScore: 95.9},
+                  {cityName: "Clearfield, UT", indexScore: 95.9},
+                  {cityName: "Oklahoma City, OK", indexScore: 92.4},
+                  {cityName: "Olympia, WA", indexScore: 105.4},
+                  {cityName: "Tumwater, WA", indexScore: 105.4},
+                  {cityName: "Omaha, NE", indexScore: 94.1},
+                  {cityName: "Council Bluffs, IA", indexScore: 94.1},
+                  {cityName: "Orlando, FL", indexScore: 97.8},
+                  {cityName: "Kissimmee, FL", indexScore: 97.8},
+                  {cityName: "Sanford, FL", indexScore: 97.8},
+                  {cityName: "Oshkosh, WI", indexScore: 91.8},
+                  {cityName: "Neenah, WI", indexScore: 91.8},
+                  {cityName: "Owensboro, KY", indexScore: 87.6},
+                  {cityName: "Oxnard, CA", indexScore: 114.7},
+                  {cityName: "Thousand Oaks, CA", indexScore: 114.7},
+                  {cityName: "Ventura, CA", indexScore: 114.7},
+                  {cityName: "Palm Bay, FL", indexScore: 95.2},
+                  {cityName: "Melbourne, FL", indexScore: 95.2},
+                  {cityName: "Titusville, FL", indexScore: 95.2},
+                  {cityName: "Panama City, FL", indexScore: 94.9},
+                  {cityName: "Parkersburg, WV", indexScore: 85.5},
+                  {cityName: "Vienna, WV", indexScore: 85.5},
+                  {cityName: "Pensacola, FL", indexScore: 93.5},
+                  {cityName: "Ferry Pass, FL", indexScore: 93.5},
+                  {cityName: "Brent, FL", indexScore: 93.5},
+                  {cityName: "Peoria, IL", indexScore: 91.8},
+                  {cityName: "Philadelphia, PA", indexScore: 107.2},
+                  {cityName: "Camden, NJ", indexScore: 107.2},
+                  {cityName: "Wilmington, DE", indexScore: 107.2},
+                  {cityName: "Phoenix, AZ", indexScore: 97.7},
+                  {cityName: "Mesa, AZ", indexScore: 97.7},
+                  {cityName: "Scottsdale, AZ", indexScore: 97.7},
+                  {cityName: "Pine Bluff, AR", indexScore: 84.6},
+                  {cityName: "Pittsburgh, PA", indexScore: 94.8},
+                  {cityName: "Pittsfield, MA", indexScore: 95.4},
+                  {cityName: "Pocatello, ID", indexScore: 89.7},
+                  {cityName: "Portland, ME", indexScore: 100.7},
+                  {cityName: "South Portland, ME", indexScore: 100.7},
+                  {cityName: "Portland, OR", indexScore: 101.3},
+                  {cityName: "Vancouver, WA", indexScore: 101.3},
+                  {cityName: "Hillsboro, OR", indexScore: 101.3},
+                  {cityName: "Port St. Lucie, FL", indexScore: 95.8},
+                  {cityName: "Prescott, AZ", indexScore: 95.4},
+                  {cityName: "Providence, RI", indexScore: 99},
+                  {cityName: "Warwick, MA", indexScore: 99},
+                  {cityName: "Provo, UT", indexScore: 97.3},
+                  {cityName: "Orem, UT", indexScore: 97.3},
+                  {cityName: "Pueblo, CO", indexScore: 92.3},
+                  {cityName: "Punta Gorda, FL", indexScore: 94.8},
+                  {cityName: "Racine, WI", indexScore: 94},
+                  {cityName: "Raleigh, NC", indexScore: 95.9},
+                  {cityName: "Rapid City, SD", indexScore: 92.3},
+                  {cityName: "Reading, PA", indexScore: 96},
+                  {cityName: "Redding, CA", indexScore: 98.2},
+                  {cityName: "Reno, NV", indexScore: 99.1},
+                  {cityName: "Richmond, VA", indexScore: 96.2},
+                  {cityName: "Riverside, CA", indexScore: 105.9},
+                  {cityName: "San Bernardino, CA", indexScore: 105.9},
+                  {cityName: "Ontario, CA", indexScore: 105.9},
+                  {cityName: "Roanoke, VA", indexScore: 91.4},
+                  {cityName: "Rochester, MN", indexScore: 93.7},
+                  {cityName: "Rochester, NY", indexScore: 97.4},
+                  {cityName: "Rockford, IL", indexScore: 91.3},
+                  {cityName: "Rocky Mount, NC", indexScore: 86.3},
+                  {cityName: "Rome, GA", indexScore: 80.7},
+                  {cityName: "Sacramento, CA", indexScore: 102.5},
+                  {cityName: "Roseville, CA", indexScore: 102.5},
+                  {cityName: "Arden, CA", indexScore: 102.5},
+                  {cityName: "Arcade, CA", indexScore: 102.5},
+                  {cityName: "Saginaw, MI", indexScore: 89.6},
+                  {cityName: "St. Cloud, MN", indexScore: 93.5},
+                  {cityName: "St. George, UT", indexScore: 93.8},
+                  {cityName: "St. Joseph, MO", indexScore: 88.9},
+                  {cityName: "St. Louis, MO", indexScore: 90.5},
+                  {cityName: "Salem, OR", indexScore: 95.4},
+                  {cityName: "Salinas, CA", indexScore: 107.9},
+                  {cityName: "Salisbury, MD", indexScore: 89.7},
+                  {cityName: "Salt Lake City, UT", indexScore: 99.7},
+                  {cityName: "San Angelo, TX", indexScore: 93.5},
+                  {cityName: "San Antonio, TX", indexScore: 94.4},
+                  {cityName: "New Braunfels, TX", indexScore: 94.4},
+                  {cityName: "San Diego, CA", indexScore: 115.9},
+                  {cityName: "Carlsbad, CA", indexScore: 115.9},
+                  {cityName: "San Francisco, CA", indexScore: 121.3},
+                  {cityName: "Oakland, CA", indexScore: 121.3},
+                  {cityName: "Hayward, CA", indexScore: 121.3},
+                  {cityName: "San Jose, CA", indexScore: 122.9},
+                  {cityName: "Sunnyvale, CA", indexScore: 122.9},
+                  {cityName: "Santa Clara, CA", indexScore: 122.9},
+                  {cityName: "San Luis Obispo, CA", indexScore: 107},
+                  {cityName: "Paso Robles, CA", indexScore: 107},
+                  {cityName: "Arroyo Grande, CA", indexScore: 107},
+                  {cityName: "Santa Cruz, CA", indexScore: 121.8},
+                  {cityName: "Watsonville, CA", indexScore: 121.8},
+                  {cityName: "Santa Fe, NM", indexScore: 99.7},
+                  {cityName: "Santa Maria, CA", indexScore: 108.8},
+                  {cityName: "Santa Barbara, CA", indexScore: 108.8},
+                  {cityName: "Santa Rosa, CA", indexScore: 118.3},
+                  {cityName: "Savannah, GA", indexScore: 94.3},
+                  {cityName: "Scranton, PA", indexScore: 91.8},
+                  {cityName: "Wilkes-Barre, PA", indexScore: 91.8},
+                  {cityName: "Hazleton, PA", indexScore: 91.8},
+                  {cityName: "Seattle, WA", indexScore: 107.8},
+                  {cityName: "Tacoma, WA", indexScore: 107.8},
+                  {cityName: "Bellevue, WA", indexScore: 107.8},
+                  {cityName: "Sebastian, FL", indexScore: 90.9},
+                  {cityName: "Vero Beach, FL", indexScore: 90.9},
+                  {cityName: "Sebring, FL", indexScore: 84.9},
+                  {cityName: "Sheboygan, WI", indexScore: 91.7},
+                  {cityName: "Sherman, TX", indexScore: 91.3},
+                  {cityName: "Denison, TX", indexScore: 91.3},
+                  {cityName: "Shreveport, LA", indexScore: 90.9},
+                  {cityName: "Bossier City, LA", indexScore: 90.9},
+                  {cityName: "Sierra Vista, AZ", indexScore: 90.7},
+                  {cityName: "Douglas, AZ", indexScore: 90.7},
+                  {cityName: "Sioux City, IA", indexScore: 89},
+                  {cityName: "Sioux Falls, SD", indexScore: 92.8},
+                  {cityName: "South Bend, IN", indexScore: 90.2},
+                  {cityName: "Mishawaka, IN", indexScore: 90.2},
+                  {cityName: "Spartanburg, SC", indexScore: 87.8},
+                  {cityName: "Spokane, WA", indexScore: 95.6},
+                  {cityName: "Spokane Valley, WA", indexScore: 95.6},
+                  {cityName: "Springfield, IL", indexScore: 92.3},
+                  {cityName: "Springfield, MA", indexScore: 96.8},
+                  {cityName: "Springfield, MO", indexScore: 88.5},
+                  {cityName: "Springfield, OH", indexScore: 88.5},
+                  {cityName: "State College, PA", indexScore: 102.4},
+                  {cityName: "Staunton, VA", indexScore: 88.8},
+                  {cityName: "Waynesboro, VA", indexScore: 88.8},
+                  {cityName: "Stockton, CA", indexScore: 100.4},
+                  {cityName: "Lodi, CA", indexScore: 100.4},
+                  {cityName: "Sumter, SC", indexScore: 87.6},
+                  {cityName: "Syracuse, NY", indexScore: 95.5},
+                  {cityName: "Tallahassee, FL", indexScore: 94.3},
+                  {cityName: "Tampa, FL", indexScore: 100.1},
+                  {cityName: "St. Petersburg, FL", indexScore: 100.1},
+                  {cityName: "Clearwater, FL", indexScore: 100.1},
+                  {cityName: "Terre Haute, IN", indexScore: 87.9},
+                  {cityName: "Texarkana, TX", indexScore: 87.6},
+                  {cityName: "Texarkana, AR", indexScore: 87.6},
+                  {cityName: "The Villages, FL", indexScore: 90.2},
+                  {cityName: "Toledo, OH", indexScore: 89.6},
+                  {cityName: "Topeka, KS", indexScore: 89.8},
+                  {cityName: "Trenton, NJ", indexScore: 112.5},
+                  {cityName: "Tucson, AZ", indexScore: 97.1},
+                  {cityName: "Tulsa, OK", indexScore: 91.3},
+                  {cityName: "Tuscaloosa, AL", indexScore: 88.3},
+                  {cityName: "Tyler, TX", indexScore: 94},
+                  {cityName: "Honolulu, HI", indexScore: 123.5},
+                  {cityName: "Utica, NY", indexScore: 93},
+                  {cityName: "Rome, NY", indexScore: 93},
+                  {cityName: "Valdosta, GA", indexScore: 82.2},
+                  {cityName: "Vallejo, CA", indexScore: 115.4},
+                  {cityName: "Fairfield, CA", indexScore: 115.4},
+                  {cityName: "Victoria, TX", indexScore: 93.7},
+                  {cityName: "Vineland, NJ", indexScore: 102.2},
+                  {cityName: "Bridgeton, NJ", indexScore: 102.2},
+                  {cityName: "Virginia Beach, VA", indexScore: 98.4},
+                  {cityName: "Norfolk, VA", indexScore: 98.4},
+                  {cityName: "Newport News, VA", indexScore: 98.4},
+                  {cityName: "Visalia CA", indexScore: 95.4},
+                  {cityName: "Porterville, CA", indexScore: 95.4},
+                  {cityName: "Waco, TX", indexScore: 91.5},
+                  {cityName: "Walla Walla, WA", indexScore: 92.6},
+                  {cityName: "Warner Robins, GA", indexScore: 89.9},
+                  {cityName: "Washington, DC", indexScore: 119.4},
+                  {cityName: "Arlington, VA", indexScore: 119.4},
+                  {cityName: "Alexandria, VA", indexScore: 119.4},
+                  {cityName: "Waterloo, IA", indexScore: 91.2},
+                  {cityName: "Cedar Falls, IA", indexScore: 91.2},
+                  {cityName: "Watertown, NY", indexScore: 98.1},
+                  {cityName: "Fort Drum, NY", indexScore: 98.1},
+                  {cityName: "Wausau, WI", indexScore: 91.8},
+                  {cityName: "Weirton, WV", indexScore: 87.1},
+                  {cityName: "Steubenville, OH", indexScore: 87.1},
+                  {cityName: "Wenatchee, WA", indexScore: 95},
+                  {cityName: "Wheeling, WV", indexScore: 86.7},
+                  {cityName: "Wichita, KS", indexScore: 91},
+                  {cityName: "Wichita Falls, TX", indexScore: 90.9},
+                  {cityName: "Williamsport, PA", indexScore: 93.6},
+                  {cityName: "Wilmington, NC", indexScore: 94.9},
+                  {cityName: "Winchester, VA", indexScore: 91.3},
+                  {cityName: "Winston-Salem, NC", indexScore: 90},
+                  {cityName: "Worcester, MA", indexScore: 103.9},
+                  {cityName: "Yakima, WA", indexScore: 95},
+                  {cityName: "York, PA", indexScore: 96.1},
+                  {cityName: "Hanover, PA", indexScore: 96.1},
+                  {cityName: "Youngstown, OH", indexScore: 88.8},
+                  {cityName: "Warren, OH", indexScore: 88.8},
+                  {cityName: "Boardman, OH", indexScore: 88.8},
+                  {cityName: "Yuba City, CA", indexScore: 98.5},
+                  {cityName: "Yuma, AZ", indexScore: 93.3}];
 
-
-        // var salaryComp1 = [];
-        // var salaryComp2 = [];
-
-        salaryCity();
-        salaryCity2();
-
-        function salaryCity() {
-          var i = rpps.length;
-
-          while(i--) {
-              if($("#city-div").val().trim() == rpps[i].GeoName) {
-                  console.log("success!");
-                  salaryComp2.push(rpps[i].Index);
-                  break;
-              }
-          }
-          console.log(salaryComp1[0]);
-        };
-
-        function salaryCity2() {
-          var i = rpps.length;
-
-          while(i--) {
-              if($("#city-div2").val().trim() == rpps[i].GeoName) {
-                  console.log("success!");
-                  salaryComp2.push(rpps[i].Index);
-                  break;
-              }
-          }
-          console.log(salaryComp2[0]);
-        };
 
 
 
