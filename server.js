@@ -11,7 +11,7 @@ var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 3306;
+var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -23,18 +23,15 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(process.cwd() + "/public/index.html"));
+app.use(express.static(process.cwd() + "/public"));
 
 // Routes =============================================================
 // Import routes and give the server access to them.
 var routes = require("./controllers/rppsController.js");
-
-// require("./routes/html-routes.js")(app);
-// require("./routes/post-api-routes.js")(app);
-// require("./routes/author-api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

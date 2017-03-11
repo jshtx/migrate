@@ -1,29 +1,29 @@
-var express = require("express");
+// var express = require("express");
 
-var router = express.Router();
+// var router = express.Router();
 
-var rpps = require("../data/rppsData.js");
+// var rpps = require("../data/rppsData.js");
 
-var js = require("../public/js/index.js");
+// //var js = require("../public/js/index.js");
 
-var $;
+// var $;
 
-require("jsdom").env("", function(err, window) {
-    if (err) {
-        console.error(err);
-        return;
-    }
+// //require("jsdom").env("", function(err, window) {
+//     if (err) {
+//         console.error(err);
+//         return;
+//     }
 
-    function doSomething(){
-        var deferred = $.Deferred();
-     }
-    var $ = require("jquery")(window);
-    doSomething();
-});
+//     function doSomething(){
+//         var deferred = $.Deferred();
+//      }
+//     var $ = require("jquery")(window);
+//     doSomething();
+// //});
 
-router.get('/', function (req, res) {
-  res.render('index', {});
-});
+// router.get('/', function (req, res) {
+//   res.render('index', {});
+// });
 
-salaryComp();
+// //salaryComp();
 
