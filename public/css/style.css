@@ -39,16 +39,25 @@ ul{
 }
 label{
 	margin:0;
+	color: #dfef89;
 }
 button{
 	width:150px;
-	margin: 5px 5px;
+	background-color: rgb(146, 128, 92);
+	color: #dfef89;
+	
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
+
+#firstbutton{
+	margin-left: 44px;
+}
+
 img {
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -62,7 +71,7 @@ body ul {
 /*-- /reset code --*/
 body {
 	font-family: 'Titillium Web', sans-serif;
-	background:url(../assets/img/blur.jpg) no-repeat;
+	background-color: #182932;
 	background-position:center;
 	background-size:100% 100%;
 	-webkit-background-size:100% 100%;
@@ -72,6 +81,13 @@ body {
 	height:100%;
 	width:100%;
 }
+
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e7;
+    background-color: #182932;
+}
+
 section.ui-w3ls {
     width: 95%;
     margin: 0 auto;
@@ -100,11 +116,13 @@ section.ui-w3ls {
 }
 .navbar-brand h1 {
 	font-size: 40px;
-    font-weight: 700;
     /*text-transform: uppercase;*/
+        position: relative;
+    left: -61px;
+    top: 30px;
     color: #fff;
-    font-family: 'Exo 2', sans-serif;
-}
+    font-family: 'Poppins', sans-serif;}
+
 .navbar img.img-circle.img-responsive {
     width: 50px;
     height: 50px;
@@ -135,7 +153,7 @@ ul.dropdown-menu>li>a {
     white-space: nowrap;
 }
 ul.dropdown-menu li a:hover {
-	background-color:#8FFF8C;
+	background-color:#efa656;
 	color:#000!important;
 } 
 ul.dropdown-menu li a:hover i.fa {
@@ -187,6 +205,7 @@ label #city-input{
 
 #city-div{
 	float:left !important;
+	    margin-right: 92px;
 
 
 }
@@ -207,21 +226,44 @@ label #city-input{
     
 }
 
+#clearbutton{
+    left: 560px;
+    position: relative;
+}
+#myprogress{
+	background-color: red;
+}
+
+#logo{
+	height: auto;
+	width: 150px;
+	position: relative;
+	left: -603px;
+	    top: -7px;
+}
+
 a:hover + .test {
     display: block !important;
     z-index: 100 !important;
+    opacity: 0.9 !important;
     color: white !important;
     background-color: #1990ea !important;
     position: absolute !important;
+    z-index: 30 !important;
     margin: 10px 10px !important;
     padding: 10px 10px !important;
+        top: 152px !important;
+    right: 211px;
+    height: auto;
+    width: 800px;
 }
 
 #inputcontainer{
 	padding: 15px;
 	position: relative;
-border: 3px solid darkgrey;
-text-align: center;
+	margin-left: 78px;
+
+text-align: left;
 }
 
 input#city-input{
@@ -298,11 +340,11 @@ section.second-w3ls .tabs input#tab-6{
 	top: 200px;
 }
 section.second-w3ls .tabs label {
-	background: #66CC29;
-	font-size: 12px;
+	background: #8ea253;
+	font-size: 15px;
 	font-weight:normal;
-	line-height:55px;
-	height:55px;
+	line-height:90px;
+	height:92px;
 	position: relative;
 	display: block;
 	width:170px;
@@ -321,8 +363,13 @@ section.second-w3ls .tabs label {
     box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
 	cursor:pointer;
 }
+
+
+
+
+
 section.second-w3ls .tabs input:hover + label {
-	background:#8FFF8C;
+	background:#efa656;
 }
 section.second-w3ls .tabs label:first-of-type {
     z-index: 6;
@@ -348,7 +395,7 @@ section.second-w3ls .tab-label-5 {
     margin-bottom: 1px;
 }
 section.second-w3ls .tabs input:checked + label {
-    background:#8FFF8C;
+    background:#dfef89;
 	z-index: 6;
 	width:170px;
 	 border-radius: 5px 0 0 5px;
@@ -361,14 +408,14 @@ section.second-w3ls .clear-shadow {
 	clear: both;
 }
 section.second-w3ls .content {
-    background:#312e2e;
+    background:rgba(76, 56, 34, 0.69);
 	/*--position: relative;--*/
     width: auto;
 
-	margin: -336px 0 0 120px;
+	margin: -372px 33px 0 120px;
 	height: 336px;
 	z-index: 5;
-	overflow: scroll;
+	overflow-y: scroll;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     border-radius:0px;
 }
@@ -415,14 +462,18 @@ section.second-w3ls .tabs input.tab-selector-6:checked ~ .content .content-6 {
 
 .content-2 {
 	
-	overflow-x: hidden;
+	position: absolute !important;
+	overflow-y: scroll;
+
+	
     max-height: 100%;
     width: 83.5%;
 }
 
 
 .content-4 {
-	
+	    position: absolute !important;
+    overflow-y: scroll;
 	
     max-height: 100%;
     width: 83.5%;
@@ -441,8 +492,7 @@ section.second-w3ls .content div p {
 	text-align:justify;
 	margin: 0;
 	color: #fff;
-	padding-left: 15px;
-	border-left: 7px solid #8FFF8C;
+	
 	margin-bottom:30px;
 }
 /*-- /tabs section --*/
@@ -528,7 +578,7 @@ section.second-w3ls ul.tabs-w3ls li a i.fa {
 
 @media (max-width:1440px) {
 .navbar-brand h1 {
-    font-size: 35px;
+    font-size: 96px;
 }
 .navbar-brand {
 	padding: 19px 15px;
@@ -563,7 +613,7 @@ section.second-w3ls .content div p {
     line-height: 35px;
 }
 section.second-w3ls .content {
-	height: 260px;
+	height: 373px;
 }
 
 

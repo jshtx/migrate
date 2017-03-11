@@ -6,12 +6,13 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3306;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -22,10 +23,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// Static directory
-app.use(express.static("./public"));
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + "/public/index.html"));
 
 // Routes =============================================================
+// Import routes and give the server access to them.
+var routes = require("./controllers/rppsController.js");
 
 
  require("./routes/api-routes.js")(app);

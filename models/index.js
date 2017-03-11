@@ -1,5 +1,20 @@
 'use strict';
 
+var $;
+
+require("jsdom").env("", function(err, window) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    function doSomething(){
+        var deferred = $.Deferred();
+     }
+    var $ = require("jquery")(window);
+    doSomething();
+});
+
 var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');
