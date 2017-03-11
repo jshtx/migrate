@@ -240,7 +240,7 @@ $("#firstbutton").on("click", function(event) {
 
     $("#rent").on("click", function(event) {
 
-    	console.log('test');
+        console.log('test');
         var city = $("#city-input").val().trim();
 
 
@@ -1860,4 +1860,3 @@ $("#firstbutton").on("click", function(event) {
 $('#clearbutton').click(function() {
   window.location.reload();
 });
-
