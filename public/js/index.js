@@ -173,85 +173,6 @@ $("#firstbutton").on("click", function(event) {
 
 
 
-
-
-
-// BEGINNING OF INDEED API AJAX CALL
-  $("#submit").on("click", function(event) {
-
-      var jobTitle = $("#jobTitle").val().trim();
-      var jobTitle2 = $("#jobTitle2").val().trim();
-      var jobCity = $("#city-div").val().trim();
-      var jobCity2 = $("#city-div2").val().trim();
-      var jobState = $("#jobState").val().trim();
-      var jobState2 = $("#jobState2").val().trim();
-      var jobType = $("#jobType").val().trim();
-      var jobType2 = $("#jobType2").val().trim();
-      var jobSite = $("#jobSite").val().trim();
-      var jobSite2 = $("#jobSite2").val().trim();
-      var jobSalary = $("#jobSalary").val().trim();
-      var jobSalary2 = $("#jobSalary2").val().trim();
-      var jobDistance = $("#jobDistance").val().trim();
-      var jobDistance2 = $("#jobDistance2").val().trim();
-
-      event.preventDefault();
-
-      var queryURL = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle+"&l="+jobCity+"%2C+"+jobState+"&sort=&radius="+jobDistance+"&st="+jobSite+"&jt="+jobType+"&salary="+jobSalary+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
-      var queryURL2 = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle2+"&l="+jobCity2+"%2C+"+jobState2+"&sort=&radius="+jobDistance2+"&st="+jobSite2+"&jt="+jobType2+"&salary="+jobSalary2+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
-  
-      $.ajax({
-              url: queryURL,
-              method: "GET"
-          })
-       
-          .done(function(response) {
-              
-              var res = JSON.stringify(response, null, 2);
-              $('#search-results').append("<ul id='searchResultsList'></ul>");
-              console.log("FIRST AJAX CALL RESULTS - BEGINNING");
-              for (var i = 0; i < res.length; i++) {
-                $("#searchResultsList").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
-                 + "<h5>" + response.results[i].company + "</h5>" + 
-                  "<h5>" + response.results[i].formattedLocation + "</h5>"
-                 + "</li>" + "<br>");
-                console.log(response.results[i].company)
-                console.log(response.results[i].formattedLocation)
-                console.log(response.results[i].snippet)
-                console.log(response.results[i].url)
-              };
-              console.log("FIRST AJAX CALL RESULTS - END");
-              
-          });
-
-      $.ajax({
-              url: queryURL2,
-              method: "GET"
-          })
-       
-          .done(function(response) {
-              
-              var res = JSON.stringify(response, null, 2);
-              $('#search-results2').append("<ul id='searchResultsList2'></ul>");
-              console.log("SECOND AJAX CALL RESULTS - BEGINNING");
-              for (var i = 0; i < res.length; i++) {
-                $("#searchResultsList2").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
-                 + "<h5>" + response.results[i].company + "</h5>" + 
-                  "<h5>" + response.results[i].formattedLocation + "</h5>" 
-                 + "</li>" + "<br>");
-                console.log(response.results[i].jobtitle);
-                console.log(response.results[i].company);
-                console.log(response.results[i].formattedLocation);
-                console.log(response.results[i].snippet);
-                console.log(response.results[i].url);
-              };
-              console.log("SECOND AJAX CALL RESULTS - END");
-                      
-          });
-  });
-// END OF INDEED API AJAX CALL
-
-
-
     var city = $("#city-input").val().trim();
 
 
@@ -1829,6 +1750,82 @@ $("#firstbutton").on("click", function(event) {
 
 
   });
+
+// BEGINNING OF INDEED API AJAX CALL
+  $("#submit").on("click", function(event) {
+
+      var jobTitle = $("#jobTitle").val().trim();
+      var jobTitle2 = $("#jobTitle2").val().trim();
+      var jobCity = $("#city-input").val().trim();
+      var jobCity2 = $("#city-input2").val().trim();
+      var jobState = $("#jobState").val().trim();
+      var jobState2 = $("#jobState2").val().trim();
+      var jobType = $("#jobType").val().trim();
+      var jobType2 = $("#jobType2").val().trim();
+      var jobSite = $("#jobSite").val().trim();
+      var jobSite2 = $("#jobSite2").val().trim();
+      var jobSalary = $("#jobSalary").val().trim();
+      var jobSalary2 = $("#jobSalary2").val().trim();
+      var jobDistance = $("#jobDistance").val().trim();
+      var jobDistance2 = $("#jobDistance2").val().trim();
+
+      event.preventDefault();
+      console.log(jobCity);
+      console.log(jobCity2);
+      var queryURL = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle+"&l="+jobCity+"%2C+"+jobState+"&sort=&radius="+jobDistance+"&st="+jobSite+"&jt="+jobType+"&salary="+jobSalary+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
+      var queryURL2 = "http://api.indeed.com/ads/apisearch?publisher=6697079064168197&q="+jobTitle2+"&l="+jobCity2+"%2C+"+jobState2+"&sort=&radius="+jobDistance2+"&st="+jobSite2+"&jt="+jobType2+"&salary="+jobSalary2+"&start=&limit=&fromage=20&filter=&latlong=1&co=us&chnl=&userip="+ userIp[0] +"&useragent=MMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&v=2&format=json";
+  
+      $.ajax({
+              url: queryURL,
+              method: "GET"
+          })
+       
+          .done(function(response) {
+              
+              var res = JSON.stringify(response, null, 2);
+              $('#search-results').append("<ul id='searchResultsList'></ul>");
+              console.log("FIRST AJAX CALL RESULTS - BEGINNING");
+              for (var i = 0; i < res.length; i++) {
+                $("#searchResultsList").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
+                 + "<h5>" + response.results[i].company + "</h5>" + 
+                  "<h5>" + response.results[i].formattedLocation + "</h5>"
+                 + "</li>" + "<br>");
+                console.log(response.results[i].jobtitle);
+                console.log(response.results[i].company);
+                console.log(response.results[i].formattedLocation);
+                console.log(response.results[i].snippet);
+                console.log(response.results[i].url);
+              };
+              console.log("FIRST AJAX CALL RESULTS - END");
+              
+          });
+
+      $.ajax({
+              url: queryURL2,
+              method: "GET"
+          })
+       
+          .done(function(response) {
+              
+              var res = JSON.stringify(response, null, 2);
+              $('#search-results2').append("<ul id='searchResultsList2'></ul>");
+              console.log("SECOND AJAX CALL RESULTS - BEGINNING");
+              for (var i = 0; i < res.length; i++) {
+                $("#searchResultsList2").append("<li>" + "<b><h4>" + response.results[i].jobtitle + "</h4></b>"
+                 + "<h5>" + response.results[i].company + "</h5>" + 
+                  "<h5>" + response.results[i].formattedLocation + "</h5>" 
+                 + "</li>" + "<br>");
+                console.log(response.results[i].jobtitle);
+                console.log(response.results[i].company);
+                console.log(response.results[i].formattedLocation);
+                console.log(response.results[i].snippet);
+                console.log(response.results[i].url);
+              };
+              console.log("SECOND AJAX CALL RESULTS - END");
+                      
+          });
+  });
+// END OF INDEED API AJAX CALL
 
 
 };
